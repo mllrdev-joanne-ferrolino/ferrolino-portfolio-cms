@@ -1,6 +1,10 @@
 name: ci
 
-on: push
+on:
+  push:
+    branches-ignore:
+      - main
+  pull_request:
 
 jobs:
   ci:
@@ -32,3 +36,8 @@ jobs:
 
       - name: Typecheck
         run: pnpm run typecheck
+
+      - name: Build
+        run: pnpm run build
+        env:
+          NODE_OPTIONS: '--max-old-space-size=4096'
