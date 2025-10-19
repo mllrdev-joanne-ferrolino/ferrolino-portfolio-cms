@@ -1,6 +1,9 @@
 seo:
   title: Sean Erick C. Ramones | Full-stack Software Engineer
   description: Welcome to my portfolio! I'm Sean Erick Ramones, and I build digital solutions that are both beautiful and functional.
+profile_image:
+  src: /avatars/profile-image-1.png
+  alt: Profile image of Sean Erick Ramones
 title: Hey, I'm Sean Erick Ramones, Software Engineer
 description: I create intuitive, scalable applications where design meets functionality, turning complex ideas into seamless user experiences.
 hero:

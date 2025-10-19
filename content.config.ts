@@ -40,6 +40,12 @@ export default defineContentConfig({
       type: 'page',
       source: 'index.yml',
       schema: z.object({
+        title: z.string().nonempty(),
+        description: z.string().nonempty(),
+        profile_image: z.object({
+          src: z.string().nonempty().editor({ input: 'media' }),
+          alt: z.string().nonempty()
+        }),
         hero: z.object({
           links: z.array(createButtonSchema()),
           images: z.array(createImageSchema())
