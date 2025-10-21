@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import type { IndexCollectionItem } from '@nuxt/content'
 
-const { footer, global } = useAppConfig()
+const { global } = useAppConfig()
 
-defineProps<{
+const props = defineProps<{
   page: IndexCollectionItem
 }>()
+
+const snsLinks = computed(() => props.page.snsLinks ?? [])
 </script>
 
 <template>
@@ -33,11 +35,12 @@ defineProps<{
           delay: 0.1
         }"
       >
-        <UColorModeAvatar
-          class="size-18 ring ring-default ring-offset-3 ring-offset-(--ui-bg)"
-          :light="page.profile_image.src"
-          :dark="page.profile_image.src"
-          :alt="page.profile_image.alt"
+        <NuxtImg
+          class="size-18 ring ring-default ring-offset-3 ring-offset-(--ui-bg) rounded-full"
+          :src="page.profileImage.src"
+          :alt="page.profileImage.alt"
+          width="72"
+          height="72"
         />
       </Motion>
     </template>
@@ -58,9 +61,7 @@ defineProps<{
           duration: 0.6,
           delay: 0.1
         }"
-      >
-        {{ page.title }}
-      </Motion>
+      />
     </template>
 
     <template #description>
@@ -132,7 +133,7 @@ defineProps<{
 
       <div class="gap-x-4 inline-flex mt-4">
         <Motion
-          v-for="(link, index) of footer?.links"
+          v-for="(link, index) of snsLinks"
           :key="index"
 
           :initial="{
@@ -182,7 +183,7 @@ defineProps<{
         <NuxtImg
           width="234"
           height="234"
-          class="rounded-lg aspect-square object-cover"
+          class="rounded-lg aspect-square object-cover bg-white p-2"
           :class="index % 2 === 0 ? '-rotate-2' : 'rotate-2'"
           v-bind="img"
         />

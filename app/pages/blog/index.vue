@@ -9,6 +9,7 @@ if (!page.value) {
     fatal: true
   })
 }
+
 const { data: posts } = await useAsyncData('blogs', () =>
   queryCollection('blog').order('date', 'DESC').all()
 )

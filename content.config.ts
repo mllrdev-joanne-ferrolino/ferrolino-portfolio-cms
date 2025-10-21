@@ -46,7 +46,8 @@ export default defineContentConfig({
         }).optional(),
         title: z.string().nonempty(),
         description: z.string().nonempty(),
-        profile_image: createImageSchema(),
+        profileImage: createImageSchema(),
+        snsLinks: z.array(createButtonSchema()),
         hero: z.object({
           links: z.array(createButtonSchema()),
           images: z.array(createImageSchema())
@@ -130,6 +131,7 @@ export default defineContentConfig({
       type: 'page',
       source: 'about.yml',
       schema: z.object({
+        profileImage: createImageSchema(),
         content: z.object({}),
         images: z.array(createImageSchema())
       })

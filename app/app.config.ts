@@ -25,21 +25,31 @@ export default defineAppConfig({
   footer: {
     credits: `Built with Nuxt UI • © ${new Date().getFullYear()}`,
     colorMode: false,
-    links: [{
-      'icon': 'i-simple-icons-discord',
-      'to': 'https://go.nuxt.com/discord',
-      'target': '_blank',
-      'aria-label': 'Nuxt on Discord'
-    }, {
-      'icon': 'i-simple-icons-x',
-      'to': 'https://go.nuxt.com/x',
-      'target': '_blank',
-      'aria-label': 'Nuxt on X'
-    }, {
-      'icon': 'i-simple-icons-github',
-      'to': 'https://github.com/nuxt/ui',
-      'target': '_blank',
-      'aria-label': 'Nuxt UI on GitHub'
-    }]
+    links: [
+      {
+        'icon': 'i-simple-icons-linkedin',
+        'to': 'https://www.linkedin.com/in/sean-erick-ramones-102a64192/',
+        'target': '_blank',
+        'aria-label': 'Sean Erick Ramones on Linkedin'
+      },
+      {
+        'icon': 'i-simple-icons-github',
+        'to': 'https://github.com/sean-erick-ramones',
+        'target': '_blank',
+        'aria-label': 'Sean Erick Ramones on GitHub'
+      },
+      {
+        'icon': 'i-simple-icons-x',
+        'to': 'https://x.com/ramones_sean',
+        'target': '_blank',
+        'aria-label': 'Nuxt on X'
+      },
+      {
+        'icon': 'i-simple-icons-instagram',
+        'to': 'https://www.instagram.com/sean.e.ramz',
+        'target': '_blank',
+        'aria-label': 'Sean Erick Ramones on Instagram'
+      }
+    ]
   }
 })
