@@ -57,6 +57,8 @@ export default defineContentConfig({
           items: z.array(z.object({
             date: z.date(),
             position: z.string(),
+            description: z.string(),
+            index: z.number(),
             company: z.object({
               name: z.string(),
               url: z.string(),

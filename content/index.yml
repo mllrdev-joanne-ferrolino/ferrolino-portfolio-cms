@@ -59,32 +59,36 @@ hero:
 about:
   title: About Me
   description: |
-    As a UX/UI designer and front-end developer with 6 years of experience, I leverage my Boston University Interactive Design degree to craft user-centered digital experiences.
-    My approach blends creative strategy with technical expertise, transforming concepts into functional, purposeful digital products that seamlessly integrate design and technology.
+    As a full-stack software engineer with over 7 years of experience, I specialize in building modern, performant web applications with a strong focus on usability and design consistency.
+    My approach blends technical depth with user-centered thinking—translating complex ideas into scalable, accessible digital products that balance functionality, performance, and great user experience.
 experience:
   title: Work Experience
   items:
-    - position: Brand Designer at
-      date: 2023 - Present
+    - position: Full-stack Software Engineer
+      date: May 2019 - Present
       company:
-        name: Nuxt
-        logo: i-simple-icons-nuxtdotjs
-        url: https://nuxt.com
-        color: '#00DC82'
-    - position: Assets Designer at
-      date: 2022 - 2023
+        name: Miller Development AB
+        logo: i-lucide-code-xml
+        url: https://millerdevelopment.se
+      description: Led full-stack development across international clients, progressing from mid-level to Vue SME while building scalable dashboards, HR SaaS products, and ML-integrated platforms using Vue, Nuxt, Node.js, FastAPI, and serverless architecture.
+      index: 2
+    - position: Full-stack Software Developer
+      date: Jun 2018 - Apr 2019
       company:
-        name: Raycast
-        logo: i-simple-icons-raycast
-        url: https://raycast.com
-        color: '#FF6363'
-    - position: Senior UX/UI Designer at
-      date: 2020 - 2021
+        name: SCI Global Services Inc.
+        logo: i-lucide-flask-conical
+        url: http://sciglobalservices.com/
+      description: Developed B2B websites and digital marketing solutions for laboratory and medical markets, delivering full-stack web applications with integrated graphic design and interactive media.
+      index: 1
+    - position: Software Developer (Contractual)
+      date: May 2023 - Jan 2024
       company:
-        name: Linear
-        logo: i-simple-icons-linear
-        url: https://linear.app
-        color: '#5E6AD2'
+        name: Better Trade Off Ltd.
+        logo: i-simple-icons-angular
+        url: https://www.bettertradeoff.com
+      description: Spearheaded AngularJS to Angular v12+ migration strategy by introducing reusable Web Components and modernizing onboarding portals, login systems, and admin dashboards to reduce technical debt.
+      index: 3
+
 testimonials:
   - quote: Emma's approach to UX design completely transformed our product. She has a rare ability to balance beautiful aesthetics with functional simplicity. The redesign not only looked better, but it reduced our customer support tickets by 40% and increased conversion rates across all key metrics.
     author:

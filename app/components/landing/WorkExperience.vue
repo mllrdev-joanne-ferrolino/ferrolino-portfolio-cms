@@ -1,9 +1,22 @@
 <script setup lang="ts">
 import type { IndexCollectionItem } from '@nuxt/content'
+import type { TimelineItem } from '@nuxt/ui'
 
-defineProps<{
+const props = defineProps<{
   page: IndexCollectionItem
 }>()
+
+const timelineItems = computed<TimelineItem[]>(() =>
+  props.page.experience.items.map(experience => ({
+    icon: experience.company.logo,
+    date: experience.date,
+    title: experience.position,
+    description: experience.description,
+    slot: `item-${experience.index}`,
+    company: experience.company,
+    index: experience.index
+  })).toSorted((a, b) => a.index - b.index)
+)
 </script>
 
 <template>
@@ -16,42 +29,43 @@ defineProps<{
     }"
   >
     <template #description>
-      <div class="flex flex-col gap-2">
-        <Motion
-          v-for="(experience, index) in page.experience.items"
+      <UTimeline
+        :items="timelineItems"
+        :default-value="1"
+        color="success"
+        :ui="{
+          wrapper: 'text-left',
+          description: 'text-left',
+          title: 'text-left'
+        }"
+      >
+        <template
+          v-for="(item, index) in timelineItems"
           :key="index"
-          :initial="{ opacity: 0, transform: 'translateY(20px)' }"
-          :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
-          :transition="{ delay: 0.4 + 0.2 * index }"
-          :in-view-options="{ once: true }"
-          class="text-muted flex items-center text-nowrap gap-2"
+          #[item.slot]
         >
-          <p class="text-sm">
-            {{ experience.date }}
-          </p>
-          <USeparator />
-          <ULink
-            class="flex items-center gap-1"
-            :to="experience.company.url"
-            target="_blank"
+          <Motion
+            :initial="{ opacity: 0, transform: 'translateY(20px)' }"
+            :while-in-view="{ opacity: 1, transform: 'translateY(0)' }"
+            :transition="{ delay: 0.4 + 0.2 * item.index }"
+            :in-view-options="{ once: true }"
           >
-            <span class="text-sm">
-              {{ experience.position }}
-            </span>
-            <div
-              class="inline-flex items-center gap-1"
-              :style="{ color: experience.company.color }"
-            >
-              <span class="font-medium">{{ experience.company.name }}</span>
-              <UIcon :name="experience.company.logo" />
+            <div class="space-y-1">
+              <ULink
+                :to="item.company.url"
+                target="_blank"
+                class="block font-medium hover:underline"
+                :style="{ color: item.company.color }"
+              >
+                {{ item.company.name }}
+              </ULink>
+              <p class="text-sm text-muted">
+                {{ item.description }}
+              </p>
             </div>
-          </ULink>
-        </Motion>
-      </div>
+          </Motion>
+        </template>
+      </UTimeline>
     </template>
   </UPageSection>
 </template>
-
-<style scoped>
-
-</style>
