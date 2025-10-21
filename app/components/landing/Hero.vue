@@ -61,7 +61,9 @@ const snsLinks = computed(() => props.page.snsLinks ?? [])
           duration: 0.6,
           delay: 0.1
         }"
-      />
+      >
+        {{ page.title }}
+      </Motion>
     </template>
 
     <template #description>
@@ -118,11 +120,11 @@ const snsLinks = computed(() => props.page.snsLinks ?? [])
             <template #leading>
               <span class="relative flex size-2">
                 <span
-                  class="absolute inline-flex size-full rounded-full opacity-75"
+                  class="absolute inline-flex rounded-full opacity-75 size-full"
                   :class="global.available ? 'bg-success animate-ping' : 'bg-error'"
                 />
                 <span
-                  class="relative inline-flex size-2 scale-90 rounded-full"
+                  class="relative inline-flex scale-90 rounded-full size-2"
                   :class="global.available ? 'bg-success' : 'bg-error'"
                 />
               </span>
@@ -131,7 +133,7 @@ const snsLinks = computed(() => props.page.snsLinks ?? [])
         </div>
       </Motion>
 
-      <div class="gap-x-4 inline-flex mt-4">
+      <div class="inline-flex mt-4 gap-x-4">
         <Motion
           v-for="(link, index) of snsLinks"
           :key="index"
@@ -183,7 +185,7 @@ const snsLinks = computed(() => props.page.snsLinks ?? [])
         <NuxtImg
           width="234"
           height="234"
-          class="rounded-lg aspect-square object-cover bg-white p-2"
+          class="object-cover p-2 bg-white rounded-lg aspect-square"
           :class="index % 2 === 0 ? '-rotate-2' : 'rotate-2'"
           v-bind="img"
         />
