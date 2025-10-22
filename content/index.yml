@@ -25,7 +25,7 @@ snsLinks:
     aria-label: Sean Erick Ramones on Instagram
 hero:
   links:
-    - label: Shoot me an Email!
+    - label: Let's work together
       to: mailto:seancramones@gmail.com
       color: neutral
       icon: ''
@@ -89,6 +89,10 @@ experience:
       description: Spearheaded AngularJS to Angular v12+ migration strategy by introducing reusable Web Components and modernizing onboarding portals, login systems, and admin dashboards to reduce technical debt.
       index: 3
 
+blog:
+  title: Latest Articles
+  description: Some of my recent thoughts
+
 testimonials:
   - quote: Emma's approach to UX design completely transformed our product. She has a rare ability to balance beautiful aesthetics with functional simplicity. The redesign not only looked better, but it reduced our customer support tickets by 40% and increased conversion rates across all key metrics.
     author:
@@ -111,9 +115,7 @@ testimonials:
       avatar:
         src: https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=40&h=40&q=80
         srcset: https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=80&h=80&q=80 2x
-blog:
-  title: Latest Articles
-  description: Some of my recent thoughts
+
 faq:
   title: Frequently Asked Questions
   description: Answers to common questions about my process and services.
