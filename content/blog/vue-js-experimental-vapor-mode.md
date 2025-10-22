@@ -1,0 +1,152 @@
+---
+title: "Introducing Vue’s latest experimental Vapor Mode"
+description: "By Sean Erick C. Ramones, Vue SME | JavaScript/TypeScript SME"
+date: 2024-11-01
+image: https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+minRead: 4
+author:
+  name: Sean Erick C. Ramones
+  avatar:
+    src: avatars/profile-image-1.png
+    alt: Sean Erick C. Ramones
+---
+
+# [Vue][November 2024] - Introducing Vue’s latest experimental Vapor Mode
+
+*By Sean Erick C. Ramones, Vue SME | JavaScript/TypeScript SME*
+
+
+## **Overview**
+
+Vue.js is renowned for its approachable syntax and efficient runtime. However, as performance demands increase for UI-heavy or real-time applications, Vue has introduced **Vapor Mode**. This experimental mode eliminates the virtual DOM ([vDOM](https://vuejs.org/guide/extras/rendering-mechanism)) and pre-compiles templates for faster rendering, making it ideal for high-performance scenarios.
+
+---
+
+### **Key Differences**
+
+| Feature | Default Mode | Vapor Mode |
+| --- | --- | --- |
+| **File Naming** | `.vue` | `.vapor.vue` |
+| **Syntax** | Options API / Composition API | Composition API |
+| **Virtual DOM** | Uses vDOM for diffing and patching | No vDOM; pre-compiles templates directly to DOM operations |
+| **Rendering** | Runtime template compilation | Direct DOM rendering (pre-compiled) |
+| **Reactivity** | Fully reactive | Manually managed (if needed) |
+| **Performance** | General-purpose, suitable for most apps | Optimized for performance-critical components |
+
+---
+
+### **How Vapor Mode Works**
+
+Vapor Mode removes the vDOM and instead relies on pre-compiled, direct DOM manipulation for rendering. By bypassing the vDOM diffing process, Vapor Mode eliminates the overhead of reconciling the virtual and actual DOM, making it faster for specific use cases.
+
+---
+
+### **Syntax and Usage**
+
+The syntax in Vapor Mode is **almost identical** to the Composition API. The key difference lies in the file extension (`.vapor.vue`) and the optimizations applied during the build process.
+
+### **Default Mode Example**
+
+*File: `GraphComponent.vue`*
+
+```jsx
+<template>
+  <svg :width="width" :height="height">
+    <polyline :points="points" style="fill: none; stroke: blue;" />
+  </svg>
+</template>
+
+<script setup>
+const data = [10, 20, 30, 40, 50];
+const width = 400, height = 200;
+
+const points = data
+  .map((value, index) => `${index * 80},${200 - value * 3}`)
+  .join(' ');
+</script>
+```
+
+### **Vapor Mode Example**
+
+*File: `GraphComponent.vapor.vue`*
+
+```jsx
+// The very same code from above! Just with a different .vue extension name!
+<template>
+  <svg :width="width" :height="height">
+    <polyline :points="points" style="fill: none; stroke: blue;" />
+  </svg>
+</template>
+
+<script setup>
+const data = [10, 20, 30, 40, 50];
+const width = 400, height = 200;
+
+const points = data
+  .map((value, index) => `${index * 80},${200 - value * 3}`)
+  .join(' ');
+</script>
+```
+
+### **Key Takeaway:**
+
+Vapor Mode eliminates the vDOM and uses direct DOM rendering. With `.vapor.vue` files, templates are compiled directly to DOM operations during the build step, with no runtime diffing.
+
+---
+
+### **Benefits of Eliminating the vDOM**
+
+1. **Improved Performance:**
+    
+    Vapor Mode avoids the computational cost of vDOM diffing and patching, making it faster for static or predictable UI updates.
+    
+2. **Reduced Overhead:**
+    
+    The lack of vDOM simplifies rendering logic and reduces runtime memory usage, especially in complex or dynamic components.
+    
+3. **Predictable Output:**
+    
+    Since templates are pre-compiled, the generated DOM structure is deterministic, leading to consistent performance.
+    
+
+---
+
+### **Combining Default Mode and Vapor Mode**
+
+Default Mode and Vapor Mode can coexist within the same application. Use Default Mode for components requiring reactivity or dynamic behavior, and Vapor Mode for performance-critical components.
+
+Example:
+
+- Use Vapor Mode for a **real-time chart**.
+- Use Default Mode for **forms** or **interactive UI components**.
+
+---
+
+### **When to Use Vapor Mode?**
+
+- **High-Performance Applications**: If your application requires high performance and low memory usage, Vapor Mode can be a good choice.
+- **Simple Components**: For simple components with minimal interactions and updates, Vapor Mode can provide a more efficient rendering process.
+- **Specific Use Cases**: If you have specific use cases where the benefits of Vapor Mode outweigh the limitations, it can be a valuable tool.
+
+---
+
+### **Limitations and Considerations**
+
+1. **Limited Features**: Vapor Mode may not support all the features and optimizations provided by the standard Virtual DOM and Vue’s built-in features. This can limit its applicability in certain scenarios.
+2. **Compatibility**: Some third-party libraries and plugins that rely on the Virtual DOM may not work correctly with Vapor Mode.
+3. **Debugging**: Debugging issues related to rendering can be more challenging in Vapor Mode due to the reduced abstractions and optimizations.
+4. **Learning Curve**: Developers familiar with the standard Virtual DOM may need to adjust their understanding and approach when working with Vapor Mode.
+
+---
+
+## **Final Thoughts**
+
+In most cases, Default Mode will remain our bread and butter—it’s reliable, flexible, and easy to use. Vapor Mode, on the other hand, is an exciting tool to explore for niche scenarios where performance is non-negotiable. 
+
+In the case for our project in `Sysarb` we could use Vapor components for the `graphs` since they are somewhat animation/data heavy as data-flow changes overtime. And the rest of the views (in this case the `Dashboard` ) we can use the regular default modes. 
+
+Vapor Mode is still in the experimental phase and is not yet merged into vuejs/core. However, the outlook for a release in 2024 looks good.
+
+---
+
+*Happy coding!* 🥲

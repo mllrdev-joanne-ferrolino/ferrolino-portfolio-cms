@@ -9,7 +9,9 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "blog:update": "node scripts/update-blog-frontmatter.mjs",
+    "blog:update-file": "node scripts/update-blog-frontmatter.mjs"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.68",
