@@ -17,6 +17,6 @@ Your content goes here. You can paste from Notion directly.
 
 The script will automatically update the front matter based on:
 - The first H1 heading → becomes the title
-- First paragraph → becomes the description  
+- First paragraph → becomes the description
 - Word count → calculates reading time
 - Date patterns in content → extracts date
