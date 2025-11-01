@@ -94,28 +94,31 @@ blog:
   description: Some of my recent thoughts
 
 testimonials:
-  - quote: |
-      I’ve had the pleasure of working with Sean for four years. During that time, he’s been my go-to person whenever I have questions about frontend development. While I’ve been more focused on backend work, I’ve always admired how proficient Sean is with frontend technologies and how he consistently stays up to date with the latest tools and best practices.
+  title: Testimonials
+  description: Feedback from colleagues and clients.
+  items:
+    - quote: |
+        I’ve had the pleasure of working with Sean for four years. During that time, he’s been my go-to person whenever I have questions about frontend development. While I’ve been more focused on backend work, I’ve always admired how proficient Sean is with frontend technologies and how he consistently stays up to date with the latest tools and best practices.
 
-      Sean is easy to work with, approachable, and always willing to help. He explains things clearly and patiently, making collaboration smooth and productive. He brings both technical skill and a great attitude to the team, which makes him a valuable teammate and a great person to work with.
+        Sean is easy to work with, approachable, and always willing to help. He explains things clearly and patiently, making collaboration smooth and productive. He brings both technical skill and a great attitude to the team, which makes him a valuable teammate and a great person to work with.
 
-      I highly recommend Sean to any team looking for a skilled frontend developer who’s not only technically strong but also genuinely collaborative and supportive.
-    author:
-      name: Andrew Vincoy
-      description: Tech Lead | Software Engineer @ Miller Development
-      avatar:
-        src: /avatars/testimonials/andrew-vincoy-profile-image.jpeg
-  - quote: |
-      I had the privilege of working with Sean Ramones on multiple projects at Miller Development, where he consistently stood out as a dependable and capable Full Stack Developer.
+        I highly recommend Sean to any team looking for a skilled frontend developer who’s not only technically strong but also genuinely collaborative and supportive.
+      author:
+        name: Andrew Vincoy
+        description: Tech Lead | Software Engineer @ Miller Development
+        avatar:
+          src: /avatars/testimonials/andrew-vincoy-profile-image.jpeg
+    - quote: |
+        I had the privilege of working with Sean Ramones on multiple projects at Miller Development, where he consistently stood out as a dependable and capable Full Stack Developer.
 
-      Sean combines strong technical skills with an impressive ability to adapt, collaborate, and deliver high-quality results. He approaches every task with ownership and attention to detail, ensuring that his work not only meets requirements but also contributes to the overall stability and performance of the product.
+        Sean combines strong technical skills with an impressive ability to adapt, collaborate, and deliver high-quality results. He approaches every task with ownership and attention to detail, ensuring that his work not only meets requirements but also contributes to the overall stability and performance of the product.
 
-      I strongly recommend Sean for any software development role. He is the kind of developer who not only delivers excellent work but also inspires collaboration and continuous improvement in those around him.
-    author:
-      name: Asa Bain
-      description: Tech Lead | Senior Software Engineer @ Miller Development
-      avatar:
-        src: /avatars/testimonials/asa-bain-profile-image.jpeg
+        I strongly recommend Sean for any software development role. He is the kind of developer who not only delivers excellent work but also inspires collaboration and continuous improvement in those around him.
+      author:
+        name: Asa Bain
+        description: Tech Lead | Senior Software Engineer @ Miller Development
+        avatar:
+          src: /avatars/testimonials/asa-bain-profile-image.jpeg
 faq:
   title: Frequently Asked Questions
   description: Answers to common questions about my process and services.

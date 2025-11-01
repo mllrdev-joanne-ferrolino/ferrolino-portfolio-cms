@@ -67,7 +67,9 @@ export default defineContentConfig({
             })
           }))
         }),
-        testimonials: z.array(createTestimonialSchema()),
+        testimonials: createBaseSchema().extend({
+          items: z.array(createTestimonialSchema())
+        }),
         blog: createBaseSchema(),
         faq: createBaseSchema().extend({
           categories: z.array(

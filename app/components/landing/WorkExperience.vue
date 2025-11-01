@@ -23,7 +23,7 @@ const timelineItems = computed<TimelineItem[]>(() =>
   <UPageSection
     :title="page.experience.title"
     :ui="{
-      container: '!p-0 gap-4 sm:gap-4',
+      container: '!p-0 gap-2 sm:gap-2',
       title: 'text-left text-xl sm:text-xl lg:text-2xl font-medium',
       description: 'mt-2'
     }"
