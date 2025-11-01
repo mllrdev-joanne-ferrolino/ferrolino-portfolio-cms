@@ -1,0 +1,183 @@
+---
+title: "Understanding JavaScript and Its Quirks"
+description: "By Sean Erick C. Ramones, Vue SME | JavaScript/TypeScript SME"
+date: 2024-11-01
+image: https://images.pexels.com/photos/1089440/pexels-photo-1089440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+minRead: 4
+author:
+  name: Sean Erick C. Ramones
+  avatar:
+    src: avatars/profile-image-1.png
+    alt: Sean Erick C. Ramones
+---
+# [Javascript][November 2024] - Understanding JavaScript and Its Quirks
+
+*By Sean Erick C. Ramones, Vue SME | JavaScript/TypeScript SME*
+
+JavaScript is a powerful and widely used language, but it comes with quirks that can catch developers off guard (especially when you are new to the language). This report explores common pitfalls in JavaScript and provides insights to help developers navigate them effectively.
+
+
+## **Automatic Semicolon Insertion (ASI)**
+
+JavaScript automatically inserts semicolons at the end of some lines during code parsing. While this can make code appear simpler, it can also cause unintended behavior.
+
+**Example:**
+
+```jsx
+// Expected: a is 5
+let a = 1
+let b = 4
+a
+++
+b // Treated as a separate expression
+
+console.log(a) // Outputs 1, not 5
+```
+
+**Explanation:**
+
+The parser interprets the `++` as applying to `b` on a new line, rather than continuing the operation on `a`. The example above is evaluated as:
+
+```jsx
+// Expected: a is 5
+let a = 1
+let b = 4
+a; // <-- this line has a semicolon automatically inserted by ASI. The rest of the expression below is evaluated separately;
+++; // Treated as a separate expression.
+b; // also treated as a separate expression
+
+console.log(a) // Outputs 1, not 5
+
+// Correct way to do it would be:
+a ++ b // <-- both should be on the same line;
+```
+
+The way to avoid this is to have them on the same line. And, while semicolons are technically optional in JavaScript, it’s going to hurt you in the long run to work with that concept.
+
+---
+
+## **Arrays with Non-Sequential Keys**
+
+JavaScript arrays can have "holes" or even non-sequential keys, which can lead to surprising results when iterating.
+
+**Example:**
+
+```jsx
+javascript
+Copy code
+let arr = [];
+arr[3] = 'hello';
+
+console.log(arr.length); // Outputs 4
+console.log(Object.keys(arr)); // Outputs ['3']
+```
+
+**Explanation:**
+
+The array length is determined by the highest index + 1, but keys outside this sequence can still exist. For sanity’s sake, don’t do this, and instead use `Array.prototype` functions.
+
+---
+
+## **Adding Properties to Primitives Are Ignored**
+
+Primitives like strings, numbers, and booleans are immutable, so adding properties to them doesn’t work as expected.
+
+**Example:**
+
+```jsx
+let str = "hello";
+str.customProperty = "world";
+
+console.log(str.customProperty); // Outputs undefined
+```
+
+**Explanation:**
+
+JavaScript temporarily wraps primitives in objects when properties are accessed, but the object is immediately discarded.
+
+---
+
+## **Type Coercion**
+
+JavaScript implicitly converts between types in certain operations, sometimes leading to unexpected results.
+
+**Example:**
+
+```jsx
+javascript
+Copy code
+console.log('5' - 2); // Outputs 3 (string coerced to number)
+console.log('5' + 2); // Outputs '52' (number coerced to string)
+console.log(false == 0); // Outputs true
+```
+
+**Explanation:**
+
+Operators like `-` and `+` trigger different coercion rules, leading to varied outcomes.
+
+---
+
+## **Function Hoisting**
+
+Function declarations are hoisted to the top of their scope, but function expressions are not.
+
+**Example:**
+
+```jsx
+javascript
+Copy code
+console.log(sayHello()); // Outputs "Hello!"
+
+function sayHello() {
+    return "Hello!";
+}
+
+console.log(sayGoodbye()); // Error: sayGoodbye is not a function
+
+var sayGoodbye = function () {
+    return "Goodbye!";
+};
+```
+
+**Explanation:**
+
+The `sayHello` function declaration is hoisted, while the `sayGoodbye` function expression is only hoisted as an undefined variable.
+
+---
+
+## **Null Is an Object**
+
+The `typeof` operator treats `null` as an object, which can confuse developers.
+
+**Example:**
+
+```jsx
+console.log(typeof null); // Outputs "object"
+```
+
+**Explanation:**
+
+This is a historical quirk from JavaScript’s early implementation. `null` is not actually an object, but its `typeof` result remains "object" for backward compatibility. 
+
+The reason `null` is of type `"object"` in JavaScript is due to a bug in the language's initial implementation. You can dig deeper [here](https://stackoverflow.com/questions/18808226/why-is-typeof-null-object#:~:text=The%20reasoning%20behind%20this%20is,)%20to%20return%20%22object%22) for more, but the most important here is that checking `null` using `typeof` results to `‘object’`.
+
+---
+
+### **Conclusion**
+
+JavaScript's quirks reflect its flexible and forgiving nature, but they can lead to unexpected behavior. By understanding these quirks, developers can write more robust and predictable code. Staying vigilant and using modern tools like linters and type systems (e.g., TypeScript, ESLint, Prettier) can further mitigate these issues.
+
+Third-party integrations/automations for CI/CD workflows (in our case in `Sysarb` we have SonarCube) that actually throws build/compilation errors and check coding conventions on your project. 
+
+AI-powered assistants can be invaluable in navigating JavaScript's quirks. Tools like **GitHub Copilot**, **ChatGPT**, and **CodeWhisperer** can:
+
+- **Detect potential issues**: Flagging problematic patterns such as reliance on implicit type coercion or ASI.
+- **Provide code suggestions**: Recommending best practices and modern alternatives to avoid common pitfalls.
+- **Explain behavior**: Offering insights into unexpected outputs and suggesting ways to fix them.
+- **Enhance debugging**: Assisting in pinpointing the root causes of errors related to these quirks.
+
+By leveraging AI tools, developers can accelerate learning, reduce bugs, and focus on building innovative solutions rather than wrestling with language oddities.
+
+---
+
+*Happy coding!* 🥲
