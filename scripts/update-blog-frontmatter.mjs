@@ -11,9 +11,13 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import dotenv from 'dotenv'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
+
+// Load environment variables from .env file
+dotenv.config({ path: path.join(__dirname, '../.env') })
 
 // Configuration
 const BLOG_DIR = path.join(__dirname, '../content/blog')
@@ -26,6 +30,82 @@ const AUTHOR = {
 }
 
 const DEFAULT_IMAGE = 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+
+// Tech-related keywords for image search
+const TECH_KEYWORDS = [
+  'programming',
+  'coding',
+  'software development',
+  'web design',
+  'technology',
+  'computer',
+  'developer',
+  'code',
+  'system design',
+  'architecture'
+]
+
+/**
+ * Get a random tech-related image from Pexels
+ * Requires NUXT_PEXELS_API_KEY environment variable
+ */
+async function getRandomTechImage(title = '') {
+  const apiKey = process.env.NUXT_PEXELS_API_KEY
+  
+  if (!apiKey) {
+    console.log('   ℹ️  No NUXT_PEXELS_API_KEY found, using default image')
+    return DEFAULT_IMAGE
+  }
+  
+  try {
+    // Extract keywords from title for better matching
+    const titleKeywords = title.toLowerCase()
+    let searchQuery = 'programming code technology'
+    
+    // Match specific keywords from title
+    if (titleKeywords.includes('vue') || titleKeywords.includes('react') || titleKeywords.includes('javascript')) {
+      searchQuery = 'web development coding'
+    } else if (titleKeywords.includes('design') && titleKeywords.includes('system')) {
+      searchQuery = 'system architecture diagram'
+    } else if (titleKeywords.includes('design')) {
+      searchQuery = 'ui ux design'
+    } else if (titleKeywords.includes('color')) {
+      searchQuery = 'color palette'
+    } else if (titleKeywords.includes('data') || titleKeywords.includes('database')) {
+      searchQuery = 'data technology'
+    }
+    
+    // Get random page (1-10 for variety)
+    const page = Math.floor(Math.random() * 10) + 1
+    
+    const response = await fetch(
+      `https://api.pexels.com/v1/search?query=${encodeURIComponent(searchQuery)}&orientation=landscape&per_page=15&page=${page}`,
+      {
+        headers: {
+          'Authorization': apiKey
+        }
+      }
+    )
+    
+    if (!response.ok) {
+      throw new Error(`Pexels API error: ${response.status}`)
+    }
+    
+    const data = await response.json()
+    
+    if (!data.photos || data.photos.length === 0) {
+      console.log('   ℹ️  No images found, using default')
+      return DEFAULT_IMAGE
+    }
+    
+    // Get random photo from results
+    const randomPhoto = data.photos[Math.floor(Math.random() * data.photos.length)]
+    return randomPhoto.src.large
+  } catch (error) {
+    console.log(`   ⚠️  Failed to fetch image from Pexels: ${error.message}`)
+    return DEFAULT_IMAGE
+  }
+}
 
 /**
  * Extract title from markdown content
@@ -56,7 +136,8 @@ function generateDescription(content) {
   const paragraphs = cleanContent.split('\n\n').filter(p => p.length > 50)
   if (paragraphs.length > 0) {
     const desc = paragraphs[0].replace(/\n/g, ' ').substring(0, 200)
-    return desc.length === 200 ? desc + '...' : desc
+    const formattedDescription = desc.length === 200 ? desc + '...' : desc
+    return `"${formattedDescription}"`;
   }
   
   return 'A blog post by Sean Erick C. Ramones'
@@ -132,7 +213,7 @@ author:
 /**
  * Process a single blog file
  */
-function processBlogFile(filePath) {
+async function processBlogFile(filePath, refreshImages = false) {
   console.log(`\n📝 Processing: ${path.basename(filePath)}`)
   
   const content = fs.readFileSync(filePath, 'utf-8')
@@ -145,8 +226,14 @@ function processBlogFile(filePath) {
   const title = extractTitle(contentWithoutFM) || existing?.title || path.basename(filePath, '.md')
   const description = generateDescription(contentWithoutFM)
   const date = extractDate(contentWithoutFM, path.basename(filePath)) || existing?.date
-  const image = existing?.image || DEFAULT_IMAGE
   const minRead = estimateReadTime(contentWithoutFM)
+  
+  // Get image (fetch new one if refreshImages flag is set or no image exists)
+  let image = existing?.image
+  if (refreshImages || !image || image === DEFAULT_IMAGE) {
+    image = await getRandomTechImage(title)
+    console.log(`   🖼️  Fetched new image from Pexels`)
+  }
   
   const newFrontMatter = generateFrontMatter({
     title,
@@ -170,14 +257,18 @@ function processBlogFile(filePath) {
 /**
  * Main execution
  */
-function main() {
+async function main() {
   const args = process.argv.slice(2)
   
-  if (args.length > 0) {
+  // Check for --refresh-images flag
+  const refreshImages = args.includes('--refresh-images')
+  const fileArgs = args.filter(arg => !arg.startsWith('--'))
+  
+  if (fileArgs.length > 0) {
     // Process specific file
-    const filePath = path.resolve(args[0])
+    const filePath = path.resolve(fileArgs[0])
     if (fs.existsSync(filePath)) {
-      processBlogFile(filePath)
+      await processBlogFile(filePath, refreshImages)
     } else {
       console.error(`❌ File not found: ${filePath}`)
       process.exit(1)
@@ -190,7 +281,13 @@ function main() {
     
     console.log(`🔄 Processing ${files.length} blog posts...`)
     
-    files.forEach(processBlogFile)
+    if (refreshImages) {
+      console.log('🔄 Fetching new images for all posts...\n')
+    }
+    
+    for (const file of files) {
+      await processBlogFile(file, refreshImages)
+    }
     
     console.log(`\n✨ Done! Updated ${files.length} posts.`)
   }

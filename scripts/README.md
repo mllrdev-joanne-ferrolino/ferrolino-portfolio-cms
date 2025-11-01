@@ -18,8 +18,11 @@
    # Update all blog posts
    pnpm blog:update
    
-   # Or update a specific file
+   # Update a specific file
    pnpm blog:update-file content/blog/my-post-slug.md
+   
+   # Refresh images for all posts (fetches new random tech images)
+   pnpm blog:refresh-images
    ```
 
 The script will automatically:
@@ -28,7 +31,8 @@ The script will automatically:
 - ✅ Calculate reading time from word count
 - ✅ Extract date if present in content
 - ✅ Add your author info
-- ✅ Preserve existing images
+- ✅ Fetch random tech-related images from Pexels (if API key is set)
+- ✅ Preserve existing images (unless --refresh-images flag is used)
 
 ### Method 2: Using the Template
 
@@ -96,7 +100,9 @@ author:
 
 ## Configuration
 
-To change default author info or images, edit:
+### Author Info
+
+To change default author info, edit:
 ```javascript
 // scripts/update-blog-frontmatter.mjs
 const AUTHOR = {
@@ -107,6 +113,41 @@ const AUTHOR = {
   }
 }
 ```
+
+### Pexels API (Optional but Recommended)
+
+To automatically fetch tech-related images:
+
+1. **Get a free API key:**
+   - Go to https://www.pexels.com/api/
+   - Create a free account
+   - Copy your API key (no rate limits!)
+
+2. **Set environment variable:**
+   ```bash
+   # Add to your ~/.bashrc or ~/.zshrc
+   export NUXT_PEXELS_API_KEY="your_api_key_here"
+   
+   # Or use a .env file in project root
+   echo "NUXT_PEXELS_API_KEY=your_api_key_here" >> .env
+   ```
+
+3. **Run the script with image fetching:**
+   ```bash
+   # New posts will automatically get random tech images
+   pnpm blog:update
+   
+   # Force refresh all existing images
+   pnpm blog:refresh-images
+   ```
+
+**Note:** Without an API key, the script will use a default fallback image.
+
+**Benefits of Pexels API:**
+- ✅ Completely free with no rate limits
+- ✅ High-quality curated images
+- ✅ No attribution required
+- ✅ Large collection of tech-related photos
 
 ## Examples
 
