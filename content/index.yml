@@ -1,11 +1,15 @@
 seo:
   title: Sean Erick C. Ramones | Full-stack Software Engineer
   description: Welcome to my portfolio! I'm Sean Erick Ramones, and I build digital solutions that are both beautiful and functional.
+
 profileImage:
   src: /avatars/profile-image-1.png
   alt: Profile image of Sean Erick Ramones
+
 title: Hi! I'm Sean Erick Ramones, a Software Engineer
+
 description: I create intuitive, scalable applications where design meets functionality, turning complex ideas into seamless user experiences.
+
 snsLinks:
   - icon: i-simple-icons-linkedin
     to: https://www.linkedin.com/in/sean-erick-ramones-102a64192
@@ -23,12 +27,16 @@ snsLinks:
     to: https://www.instagram.com/sean.e.ramz
     target: _blank
     aria-label: Sean Erick Ramones on Instagram
+
 hero:
   links:
-    - label: Let's work together
-      to: mailto:seancramones@gmail.com
+    - label: Download Resume
+      to: /documents/sean-ramones-resume.pdf
+      target: _blank
       color: neutral
-      icon: ''
+      variant: outline
+      icon: i-lucide-download
+      download: "Resume - Sean Erick Ramones"
   images:
     - src: /hero/nodejs.png
       alt: Node.js logo
@@ -56,11 +64,13 @@ hero:
       alt: Jira logo
     - src: /hero/github-copilot.png
       alt: GitHub Copilot logo
+
 about:
   title: About Me
   description: |
     As a full-stack software engineer with over 7 years of experience, I specialize in building modern, performant web applications with a strong focus on usability and design consistency.
     My approach blends technical depth with user-centered thinking—translating complex ideas into scalable, accessible digital products that balance functionality, performance, and great user experience.
+
 experience:
   title: Work Experience
   items:
@@ -119,40 +129,46 @@ testimonials:
         description: Tech Lead | Senior Software Engineer @ Miller Development
         avatar:
           src: /avatars/testimonials/asa-bain-profile-image.jpeg
+
 faq:
   title: Frequently Asked Questions
-  description: Answers to common questions about my process and services.
+  description: Answers to common questions about how I work, collaborate, and what I’m looking for next.
   categories:
-    - title: Services & Process
+    - title: Work & Collaboration
       questions:
-        - label: What services do you offer?
+        - label: What kinds of projects do you focus on?
           content: |
-            I specialize in UX/UI design and front-end development. This includes user research, wireframing, interactive prototyping, creating intuitive user interfaces, building responsive websites and web applications (especially with Vue.js/Nuxt.js), and developing design systems. My goal is to create seamless digital experiences from concept to deployment.
-        - label: What is your design process like?
+            I build full‑stack web applications, dashboards, and SaaS platforms with data‑rich, user‑friendly interfaces. On the frontend I primarily use Vue/Nuxt (and React when needed). On the backend I work with Node.js and FastAPI, with PostgreSQL/Supabase for data, and modern serverless/cloud platforms like Vercel and Cloudflare.
+        - label: How do you ensure scalability and code quality?
           content: |
-            My process is collaborative and iterative, typically involving stages like Discovery & Research, Ideation & Prototyping, User Testing, Visual Design, and close collaboration with development teams during implementation. I tailor the process based on project needs, always focusing on user-centered solutions.
-        - label: Do you work with startups?
+            I favor type‑safe code (TypeScript), clear architecture and modular components, automated testing where it matters, and performance profiling. I document decisions, use code reviews, and set up CI to keep quality high as the product grows.
+        - label: Do you work on greenfield or existing codebases?
           content: |
-            Absolutely! I enjoy working with startups to help shape their product vision and create user-friendly interfaces from the ground up. I can adapt my process to fit the fast-paced startup environment.
-    - title: Pricing & Timelines
+            Both. I enjoy greenfield builds and I’m experienced in migrations and modernization—e.g., leading an AngularJS → Angular upgrade using Web Components while reducing technical debt.
+    - title: Compensation & Availability
       questions:
-        - label: How much does a project typically cost?
+        - label: How do you approach compensation discussions?
           content: |
-            Project costs vary based on scope, complexity, features, and timeline. For comprehensive UX/UI design and front-end development projects, my engagements typically start around $5,000, with average projects ranging between $8,000 and $25,000. For consulting or specific design tasks, my day rate is $700.
-        - label: What are your payment terms?
+            Compensation depends on the role’s scope, responsibilities, and overall package. I prefer to align on impact and expectations first, then discuss a market‑competitive offer accordingly. I’m also comfortable aligning with established salary bands and total compensation frameworks.
+        - label: Are you open to contract or freelance work?
           content: |
-            I generally require a 40% deposit to schedule the project and begin work, with the remaining 60% due upon successful project completion and delivery. I accept payments via bank transfer and Stripe.
-        - label: How long does a typical project take?
+            Yes—I'm open to full‑time roles as well as contract engagements. For contracts, I prefer clearly defined scopes, deliverables, and timelines.
+        - label: What is your availability and timezone compatibility?
           content: |
-            Timelines depend heavily on the project's scope and complexity. Smaller projects might take 3-4 weeks, while larger, more involved projects can range from 2 to 4 months. I always provide a detailed timeline estimate after the initial discovery phase.
-        - label: Do you offer retainers or ongoing support?
-          content: |
-            Yes, for clients needing ongoing design support, feature development, or maintenance, I offer monthly retainer options tailored to specific needs. Let's discuss if this is something you're interested in.
+            I primarily work in UTC+8 and can align to overlapping hours for teams in other timezones. I’m comfortable with remote and hybrid collaboration, async workflows, and scheduled syncs for key milestones.
     - title: About Me
       questions:
-        - label: What do you enjoy most about your work?
+        - label: What do you enjoy outside of work?
           content: |
-            I love the challenge of solving complex problems through design and technology. It's incredibly rewarding to see people interact with something I've created and find it genuinely useful and easy to navigate. Bridging the gap between user needs and technical possibilities is what truly excites me.
-        - label: What are your hobbies outside of work?
+            - Running
+            - Watching anime
+            - Reading Japanese manga/light novels
+            - Playing MOBA games (Dota 2) and relaxing games (Stardew Valley)
+            - Driving and exploring new places
+            - Cross‑fit training
+        - label: What motivates your work as an engineer?
           content: |
-            When I'm not designing or coding, I enjoy exploring Boston's neighborhoods, trying out new coffee shops, and hiking in the nearby reservations. I'm also passionate about photography and occasionally contribute to open-source projects.
+            Turning complex ideas into scalable, well‑designed products that feel effortless to use. I love shaping systems where design consistency, performance, and developer experience work together.
+        - label: What tech do you prefer working with?
+          content: |
+            Vue 3, Nuxt, Node.js, FastAPI, PostgreSQL/Supabase, and modern tooling (Vite, GitHub, CI/CD). I’m pragmatic and will choose the right tool for the job.

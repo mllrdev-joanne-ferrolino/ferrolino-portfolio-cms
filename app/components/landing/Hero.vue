@@ -108,7 +108,11 @@ const snsLinks = computed(() => props.page.snsLinks ?? [])
           v-if="page.hero.links"
           class="flex items-center gap-2"
         >
-          <UButton v-bind="page.hero.links[0]" />
+          <UButton
+            v-for="link in page.hero.links"
+            v-bind="link"
+            :key="link.label"
+          />
           <UButton
             :color="global.available ? 'success' : 'error'"
             variant="ghost"
@@ -137,7 +141,6 @@ const snsLinks = computed(() => props.page.snsLinks ?? [])
         <Motion
           v-for="(link, index) of snsLinks"
           :key="index"
-
           :initial="{
             scale: 1.1,
             opacity: 0,
@@ -153,9 +156,7 @@ const snsLinks = computed(() => props.page.snsLinks ?? [])
             delay: 0.5 + index * 0.1
           }"
         >
-          <UButton
-            v-bind="{ size: 'md', color: 'neutral', variant: 'ghost', ...link }"
-          />
+          <UButton v-bind="{ size: 'md', color: 'neutral', variant: 'ghost', ...link }" />
         </Motion>
       </div>
     </template>
