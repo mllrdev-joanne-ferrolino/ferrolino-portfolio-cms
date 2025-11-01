@@ -156,6 +156,12 @@ faq:
         - label: What is your availability and timezone compatibility?
           content: |
             I primarily work in UTC+8 and can align to overlapping hours for teams in other timezones. I’m comfortable with remote and hybrid collaboration, async workflows, and scheduled syncs for key milestones.
+        - label: What roles are you looking for?
+          content: |
+            Primarily **Full‑stack Software Engineer** or **Frontend Engineer (Vue/Nuxt)** roles. I’m comfortable working with React when needed and I’m open to senior IC positions, hands‑on tech leadership, and platform‑focused full‑stack work.
+        - label: What’s your notice period?
+          content: |
+            Typically **1–3 weeks**, depending on active workload and handover requirements. I’ll align timelines to ensure a smooth transition.
     - title: About Me
       questions:
         - label: What do you enjoy outside of work?
