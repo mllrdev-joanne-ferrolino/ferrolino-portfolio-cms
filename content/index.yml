@@ -65,6 +65,14 @@ hero:
     - src: /hero/github-copilot.png
       alt: GitHub Copilot logo
 
+now:
+  openTo:
+    - Full-time
+    - Contract
+    - Remote (UTC+8 overlap)
+  available: true
+  meetingLink: https://calendly.com/seancramones/15-min-quick-chat
+
 about:
   title: About Me
   description: |

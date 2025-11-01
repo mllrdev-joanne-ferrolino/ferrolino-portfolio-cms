@@ -10,9 +10,13 @@ if (!page.value) {
   })
 }
 
-const { data: projects } = await useAsyncData('projects', () => {
+const { data } = await useAsyncData('projects', () => {
   return queryCollection('projects').all()
 })
+
+const projects = computed(() =>
+  data.value?.toSorted((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) || []
+)
 
 const { global } = useAppConfig()
 

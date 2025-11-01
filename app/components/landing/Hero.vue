@@ -114,22 +114,22 @@ const snsLinks = computed(() => props.page.snsLinks ?? [])
             :key="link.label"
           />
           <UButton
-            :color="global.available ? 'success' : 'error'"
+            :color="(page.now?.available ?? global.available) ? 'success' : 'error'"
             variant="ghost"
             class="gap-2"
             target="_blank"
-            :to="global.available ? global.meetingLink : ''"
-            :label="global.available ? 'Available for new projects' : 'Not available at the moment'"
+            :to="(page.now?.available ?? global.available) ? (page.now?.meetingLink || global.meetingLink) : ''"
+            :label="(page.now?.available ?? global.available) ? 'Available for new projects' : 'Not available at the moment'"
           >
             <template #leading>
               <span class="relative flex size-2">
                 <span
                   class="absolute inline-flex rounded-full opacity-75 size-full"
-                  :class="global.available ? 'bg-success animate-ping' : 'bg-error'"
+                  :class="(page.now?.available ?? global.available) ? 'bg-success animate-ping' : 'bg-error'"
                 />
                 <span
                   class="relative inline-flex scale-90 rounded-full size-2"
-                  :class="global.available ? 'bg-success' : 'bg-error'"
+                  :class="(page.now?.available ?? global.available) ? 'bg-success' : 'bg-error'"
                 />
               </span>
             </template>
@@ -158,6 +158,22 @@ const snsLinks = computed(() => props.page.snsLinks ?? [])
         >
           <UButton v-bind="{ size: 'md', color: 'neutral', variant: 'ghost', ...link }" />
         </Motion>
+      </div>
+
+      <!-- Now / Open to section -->
+      <div
+        v-if="page.now?.openTo?.length"
+        class="mt-5 flex flex-col items-center gap-2"
+      >
+        <div class="flex flex-wrap justify-center gap-2">
+          <span
+            v-for="item in page.now.openTo"
+            :key="item"
+            class="px-2.5 py-1 rounded-full bg-elevated/60 text-xs text-muted"
+          >
+            {{ item }}
+          </span>
+        </div>
       </div>
     </template>
 

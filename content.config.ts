@@ -53,6 +53,15 @@ export default defineContentConfig({
           images: z.array(createImageSchema())
         }),
         about: createBaseSchema(),
+        now: z.object({
+          openTo: z.array(z.string()).optional(),
+          // Availability controls for hero CTA moved to content
+          available: z.boolean().optional(),
+          meetingLink: z.string().optional(),
+          // Legacy/optional fields (not rendered):
+          currently: z.array(z.string()).optional(),
+          availability: z.string().optional()
+        }).optional(),
         experience: createBaseSchema().extend({
           items: z.array(z.object({
             date: z.date(),
@@ -117,27 +126,22 @@ export default defineContentConfig({
         links: z.array(createButtonSchema())
       })
     }),
-    speaking: defineCollection({
-      type: 'page',
-      source: 'speaking.yml',
-      schema: z.object({
-        links: z.array(createButtonSchema()),
-        events: z.array(z.object({
-          category: z.enum(['Live talk', 'Podcast', 'Conference']),
-          title: z.string(),
-          date: z.date(),
-          location: z.string(),
-          url: z.string().optional()
-        }))
-      })
-    }),
+
     about: defineCollection({
       type: 'page',
       source: 'about.yml',
       schema: z.object({
         profileImage: createImageSchema(),
         content: z.object({}),
-        images: z.array(createImageSchema())
+        images: z.array(createImageSchema()),
+        now: z.object({
+          openTo: z.array(z.string()).optional(),
+          // Keep same shape for consistency; about page UI will only render openTo
+          available: z.boolean().optional(),
+          meetingLink: z.string().optional(),
+          currently: z.array(z.string()).optional(),
+          availability: z.string().optional()
+        }).optional()
       })
     })
   }

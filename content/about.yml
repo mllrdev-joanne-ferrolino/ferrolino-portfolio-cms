@@ -30,7 +30,25 @@ content: |
 
   If you’d like to collaborate, reach me at **seancramones@gmail.com** or connect on [LinkedIn](https://www.linkedin.com/in/sean-erick-ramones-102a64192).
 images:
-  - src: https://images.unsplash.com/photo-1744877478622-a78c7a3336f6?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-    alt: My coffee workspace
-  - src: https://images.unsplash.com/photo-1744429523595-2c06b8611242?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-    alt: My trip to Tokyo
+  - src: /about/awareness-run-2024-dumagete.jpg
+    alt: Awareness Run 2024 in Dumaguete
+  - src: /about/job-agent-team-reunion-the-pub-dumaguete.jpg
+    alt: Team reunion at The Pub in Dumaguete
+  - src: /about/pad-thai-from-wok-bae-dumaguete.jpg
+    alt: Pad Thai at Wok Bae in Dumaguete
+  - src: /about/sipalay-beach-negros-occidental.jpg
+    alt: Sipalay beach in Negros Occidental
+  - src: /about/casaroro-falls-valencia-negros-oriental.jpg
+    alt: Casaroro Falls in Negros Oriental
+  - src: /about/sipalay-coast-negros-occidental.jpg
+    alt: Sipalay coast in Negros Occidental
+
+now:
+  openTo:
+    - Full-time
+    - Contract
+    - Remote (UTC+8 overlap)
+  currently:
+    - Building data-rich dashboards with Nuxt
+    - Learning advanced serverless patterns
+  availability: Accepting new projects now

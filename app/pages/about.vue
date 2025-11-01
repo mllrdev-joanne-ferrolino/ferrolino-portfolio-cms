@@ -44,6 +44,23 @@ useSeoMeta({
         container: '!pt-0'
       }"
     >
+      <div
+        v-if="page.now?.openTo?.length"
+        class="mb-6"
+      >
+        <h3 class="text-sm font-medium text-muted">
+          Now / Open to
+        </h3>
+        <div class="mt-2 flex flex-wrap gap-2">
+          <span
+            v-for="item in page.now.openTo"
+            :key="item"
+            class="px-2.5 py-1 rounded-full bg-elevated/60 text-xs text-muted"
+          >
+            {{ item }}
+          </span>
+        </div>
+      </div>
       <MDC
         :value="page.content"
         unwrap="p"
