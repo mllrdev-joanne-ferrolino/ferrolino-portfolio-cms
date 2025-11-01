@@ -1,5 +1,5 @@
 ---
-title: "Satori by Vercel — Dynamic Image Generation in JavaScript"
+title: "[Javascript][Febuary 2025] - Satori by Vercel — Dynamic Image Generation in JavaScript"
 description: "By Sean Erick C. Ramones, Vue SME | JavaScript/TypeScript SME"
 date: 2025-02-01
 image: https://images.pexels.com/photos/9746929/pexels-photo-9746929.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1

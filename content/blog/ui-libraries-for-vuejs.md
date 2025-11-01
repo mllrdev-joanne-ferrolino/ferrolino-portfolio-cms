@@ -1,5 +1,5 @@
 ---
-title: "UI Libraries for VueJS: Vuetify, Tailwind, and PrimeVue"
+title: "[Vue][December 2024] - UI Libraries for VueJS: Vuetify, Tailwind, and PrimeVue"
 description: "By Sean Erick C. Ramones, Vue SME | JavaScript/TypeScript SME"
 date: 2024-12-01
 image: https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1

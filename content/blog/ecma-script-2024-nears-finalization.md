@@ -1,5 +1,5 @@
 ---
-title: "ECMAScript 2024 Nears Finalization"
+title: "[Javascript][December 2024] - ECMAScript 2024 Nears Finalization"
 description: "By Sean Erick C. Ramones, Vue SME | JavaScript/TypeScript SME"
 date: 2024-12-01
 image: https://images.pexels.com/photos/4955393/pexels-photo-4955393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1

@@ -161,20 +161,35 @@ const snsLinks = computed(() => props.page.snsLinks ?? [])
       </div>
 
       <!-- Now / Open to section -->
-      <div
+      <Motion
         v-if="page.now?.openTo?.length"
-        class="mt-5 flex flex-col items-center gap-2"
+        :initial="{
+          scale: 1.1,
+          opacity: 0,
+          filter: 'blur(20px)'
+        }"
+        :animate="{
+          scale: 1,
+          opacity: 1,
+          filter: 'blur(0px)'
+        }"
+        :transition="{
+          duration: 0.6,
+          delay: 0.7
+        }"
       >
-        <div class="flex flex-wrap justify-center gap-2">
-          <span
-            v-for="item in page.now.openTo"
-            :key="item"
-            class="px-2.5 py-1 rounded-full bg-elevated/60 text-xs text-muted"
-          >
-            {{ item }}
-          </span>
+        <div class="mt-5 flex flex-col items-center gap-2">
+          <div class="flex flex-wrap justify-center gap-2">
+            <span
+              v-for="item in page.now.openTo"
+              :key="item"
+              class="px-2.5 py-1 rounded-full bg-elevated/60 text-xs text-muted"
+            >
+              {{ item }}
+            </span>
+          </div>
         </div>
-      </div>
+      </Motion>
     </template>
 
     <UMarquee

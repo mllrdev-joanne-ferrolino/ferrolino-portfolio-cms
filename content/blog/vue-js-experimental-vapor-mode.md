@@ -1,5 +1,5 @@
 ---
-title: "Introducing Vue’s latest experimental Vapor Mode"
+title: "[Vue][November 2024] - Introducing Vue’s latest experimental Vapor Mode"
 description: "By Sean Erick C. Ramones, Vue SME | JavaScript/TypeScript SME"
 date: 2024-11-01
 image: https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1

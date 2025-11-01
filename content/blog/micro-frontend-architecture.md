@@ -1,5 +1,5 @@
 ---
-title: "Micro Frontend Architecture"
+title: "[Javascript][January 2025] - Micro Frontend Architecture"
 description: "By Sean Erick C. Ramones, Vue SME | JavaScript/TypeScript SME"
 date: 2025-01-01
 image: https://images.pexels.com/photos/11813187/pexels-photo-11813187.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1

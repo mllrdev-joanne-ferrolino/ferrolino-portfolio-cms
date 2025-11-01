@@ -1,5 +1,5 @@
 ---
-title: "Nuxt 3 and Serverless Edge Functions—Unlocking Performance and Scalability"
+title: "[Vue][Nuxt][March 2025] - Nuxt 3 and Serverless Edge Functions—Unlocking Performance and Scalability"
 description: "By Sean Erick C. Ramones, Vue SME | JavaScript/TypeScript SME"
 date: 2025-03-01
 image: https://images.pexels.com/photos/3872166/pexels-photo-3872166.jpeg?auto=compress&cs=tinysrgb&h=650&w=940

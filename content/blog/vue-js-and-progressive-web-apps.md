@@ -1,5 +1,5 @@
 ---
-title: "Vue.js and Progressive Web Apps (PWA) – Enhancing Web Experiences"
+title: "[Vue][February 2025] - Vue.js and Progressive Web Apps (PWA) – Enhancing Web Experiences"
 description: "By Sean Erick C. Ramones, Vue SME | JavaScript/TypeScript SME"
 date: 2025-02-01
 image: https://images.pexels.com/photos/109371/pexels-photo-109371.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1

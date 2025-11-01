@@ -1,5 +1,5 @@
 ---
-title: "Pre-rendering and Hydration in Vue.js"
+title: "[Vue][January 2025] - Pre-rendering and Hydration in Vue.js"
 description: "By Sean Erick C. Ramones, Vue SME | JavaScript/TypeScript SME"
 date: 2025-01-01
 image: https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
