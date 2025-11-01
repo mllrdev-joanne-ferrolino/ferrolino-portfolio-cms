@@ -1,0 +1,125 @@
+---
+title: "Satori by Vercel — Dynamic Image Generation in JavaScript"
+description: "By Sean Erick C. Ramones, Vue SME | JavaScript/TypeScript SME"
+date: 2025-02-01
+image: https://images.pexels.com/photos/9746929/pexels-photo-9746929.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+minRead: 4
+author:
+  name: Sean Erick C. Ramones
+  avatar:
+    src: avatars/profile-image-1.png
+    alt: Sean Erick C. Ramones
+---
+# [Javascript][Febuary 2025] - Satori by Vercel — Dynamic Image Generation in JavaScript
+
+*By Sean Erick C. Ramones, Vue SME | JavaScript/TypeScript SME*
+
+## Introduction
+
+In modern web applications, dynamically generating images for social media, personalized content, and marketing materials is a common requirement. Traditionally, developers relied on backend-heavy solutions such as Puppeteer or headless browsers to generate images, which could be slow and resource-intensive.
+
+Enter **Satori**, a library developed by Vercel that offers an efficient way to generate images from HTML and CSS using JavaScript. With its blazing-fast rendering engine, Satori enables developers to create dynamic graphics, including personalized birthday cards, event invitations, social media previews, and more. This report explores the benefits of Satori, its use cases, and how it can be leveraged to enhance custom content generation.
+
+
+## Use Cases for Satori
+
+Satori is useful for a wide range of dynamic content generation tasks. Below are some practical applications:
+
+### 1. Generating Custom Birthday Cards
+
+- Users can input their names, select a theme, and receive a personalized birthday card.
+- The card can be generated as an image and shared on social media or printed.
+
+**Example Code:**
+
+```tsx
+import { Resvg } from '@resvg/resvg-js';
+import satori from 'satori';
+
+const jsx = (
+  <div style={{ fontSize: '24px', color: 'blue', textAlign: 'center' }}>
+    <h1>Happy Birthday, Alex!</h1>
+    <p>Wishing you a fantastic year ahead!</p>;
+  </div>
+);
+
+const svg = satori(
+  jsx,
+  { width: 600, height: 400, fonts: [],
+});
+
+const pngBuffer = new Resvg(svg).render().asPng();
+```
+
+### 2. Dynamic Social Media Cards
+
+- Auto-generating Open Graph (OG) images for blog posts or social media previews.
+- Faster image generation without the need for a headless browser.
+
+### 3. Event Invitations and Announcements
+
+- Custom invitation cards for weddings, company events, or product launches.
+- Users can enter their details and instantly receive a high-quality event invite.
+
+### 4. E-commerce Personalized Marketing
+
+- Automatically generate personalized product recommendations or discount vouchers.
+- Improve user engagement with dynamic visuals tailored to individual customers.
+
+### 5. Integration with Preesh for Thank You Card Generation
+
+- Preesh, a project within the company, allows users to create and customize thank-you cards.
+- Satori can be used to generate high-quality SVG images of the customized thank-you cards, ensuring efficient rendering and design flexibility.
+- The generated SVG or PNG can then be converted into a **PDF** for easy sharing or printing using **pdf.js**.
+
+**Example Code for PDF Export:**
+
+```jsx
+import { Resvg } from '@resvg/resvg-js';
+import satori from 'satori';
+import jsPDF from 'jspdf';
+
+const jsx = (
+  <div style={{ fontSize: '24px', color: 'black', textAlign: 'center' }}>
+    <h1>Thank You!</h1>
+    <p>We appreciate your support.</p>
+  </div>
+);
+
+const svg = satori(
+  jsx,
+  { width: 600, height: 400, fonts: [] 
+});
+
+const pngBuffer = new Resvg(svg).render().asPng();
+
+// Call the pdf generation module and add the image into the addImage() function
+// This produces hd quality and sharp images that is then embedded to a pdf file.
+const pdf = new jsPDF();
+pdf.addImage(pngBuffer, 'PNG', 10, 10, 180, 100);
+pdf.save('thank_you_card.pdf');
+```
+
+- This workflow enables seamless customization and export of thank-you cards as PDFs, making Preesh a powerful tool for user engagement.
+
+---
+
+## Why Choose Satori Over Traditional Image Generation?
+
+| Feature | Satori | Puppeteer/Headless Browsers |
+| --- | --- | --- |
+| Performance | High (SVG-based) | Slower (Runs full browser instance) |
+| Serverless Support | Yes (Efficient for Edge Functions) | No (Resource-heavy) |
+| Dependency Size | Lightweight | Heavy (Chrome-based) |
+| Custom Fonts | Supported | Supported |
+| HTML & CSS Support | Yes | Yes |
+
+Satori outperforms traditional methods when it comes to speed, efficiency, and serverless compatibility, making it an excellent choice for real-time image generation.
+
+---
+
+## Conclusion
+
+Satori by Vercel introduces a game-changing way to generate dynamic images in JavaScript. Whether for personalized birthday cards, social media previews, or marketing visuals, Satori enables developers to create high-quality graphics without the overhead of traditional image generation techniques. Its fast rendering, server-less compatibility, and ease of use make it a powerful tool for modern web applications.
+
+By integrating Satori into Vue.js or other JavaScript frameworks, developers can enhance their applications with dynamic, visually appealing content while maintaining high performance and scalability. Additionally, within **Preesh** project, Satori can be leveraged to allow users to create and export custom thank-you cards efficiently, improving the overall user experience.

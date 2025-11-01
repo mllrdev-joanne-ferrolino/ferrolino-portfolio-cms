@@ -1,3 +1,15 @@
+---
+title: "ECMAScript 2024 Nears Finalization"
+description: "By Sean Erick C. Ramones, Vue SME | JavaScript/TypeScript SME"
+date: 2024-12-01
+image: https://images.pexels.com/photos/4955393/pexels-photo-4955393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+minRead: 4
+author:
+  name: Sean Erick C. Ramones
+  avatar:
+    src: avatars/profile-image-1.png
+    alt: Sean Erick C. Ramones
+---
 # [Javascript][December 2024] - ECMAScript 2024 Nears Finalization
 
 *By Sean Erick C. Ramones, Vue SME | JavaScript/TypeScript SME*
@@ -6,15 +18,6 @@
 
 As the foundation of JavaScript, ECMAScript continues to evolve to meet the demands of modern application development. Each year, the ECMAScript specification introduces new features that enhance developer productivity, improve performance, and simplify common tasks. In 2024, ECMAScript is set to release its next major update, bringing powerful new capabilities to the JavaScript language. This report highlights the key features in **ECMAScript 2024**, their impact, and what developers can expect as the finalization of this standard nears.
 
----
-
-## **What is ECMAScript?**
-
-ECMAScript is the scripting language specification that serves as the foundation for JavaScript. Each year, updates are proposed, refined, and finalized through a collaborative process by TC39, the technical committee responsible for ECMAScript standardization. The annual releases ensure that JavaScript remains modern, flexible, and aligned with developer needs in an ever-evolving ecosystem.
-
-The **ECMAScript 2024** update introduces several exciting new features that simplify workflows, improve ergonomics, and address long-standing challenges faced by developers.
-
----
 
 ## **Key Features in ECMAScript 2024**
 

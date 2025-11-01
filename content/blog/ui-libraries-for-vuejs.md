@@ -1,3 +1,15 @@
+---
+title: "UI Libraries for VueJS: Vuetify, Tailwind, and PrimeVue"
+description: "By Sean Erick C. Ramones, Vue SME | JavaScript/TypeScript SME"
+date: 2024-12-01
+image: https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+minRead: 3
+author:
+  name: Sean Erick C. Ramones
+  avatar:
+    src: avatars/profile-image-1.png
+    alt: Sean Erick C. Ramones
+---
 # [Vue][December 2024] - UI Libraries for VueJS: Vuetify, Tailwind, and PrimeVue
 
 *By Sean Erick C. Ramones, Vue SME | JavaScript/TypeScript SME*
@@ -6,35 +18,6 @@ For this month, I’d like to discuss on 3rd party libraries that can help speed
 
 The Vue.js ecosystem has experienced significant growth and diversification, particularly in the realm of component libraries and styling frameworks. These tools are critical for improving developer productivity, ensuring consistency in design systems, and accelerating development workflows. This report highlights the current state of the more popular choices in the ecosystem, focusing on **Vuetify**, **Tailwind CSS**, and **PrimeVue**, three widely adopted tools that cater to different needs within the Vue.js development landscape.
 
----
-
-### **Vuetify: A Robust Material Design Framework**
-
-Vuetify has cemented itself as one of the most popular UI libraries for Vue.js. Built on Google’s Material Design guidelines, [Vuetify](https://vuetifyjs.com/en/) provides a comprehensive set of components that are customizable, responsive, and production-ready.
-
-### **Key Features**:
-
-- **Material Design Compliance**: Prebuilt components follow Material Design specifications for consistency and accessibility.
-- **Component Variety**: A wide range of components, including data tables, forms, modals, and navigation elements.
-- **Vue 3 Support**: Vuetify 3 has been released with full support for Vue 3, improving performance and modernizing its internals.
-- **Customization**: Built-in theming, dark mode, and options for global styling make it highly adaptable to brand-specific requirements.
-
-### **Adoption and Use Cases**:
-
-[Vuetify](https://vuetifyjs.com/en/) is ideal for applications that require:
-
-- Enterprise-grade UI components with Material Design aesthetics.
-- Consistent design systems for dashboards, admin panels, and complex applications.
-- Fast development without compromising design quality.
-
-### **Challenges**:
-
-- The library can be heavy for projects where minimalism and performance are priorities.
-- Customizing deeply nested components can sometimes be complex.
-
-[Vuetify](https://vuetifyjs.com/en/) continues to thrive within the Vue ecosystem due to its reliability, active development, and strong community support.
-
----
 
 ### **Tailwind CSS: Utility-First Styling for Modern Applications**
 

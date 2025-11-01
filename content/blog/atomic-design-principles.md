@@ -1,5 +1,5 @@
 ---
-title: "- VueJS Introducing Dynamic Layouts using the Atomic Design Principles"
+title: "VueJS Introducing Dynamic Layouts using the Atomic Design Principles"
 description: For this month, Niclas - a frontend developer from the Sysarb SWE team has introduced a new architecture in the project client that can help scale and maintain the project better in the long-run.
 date: 2024-10-01
 image: https://images.pexels.com/photos/3888151/pexels-photo-3888151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
