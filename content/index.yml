@@ -124,6 +124,7 @@ testimonials:
       author:
         name: Andrew Vincoy
         description: Tech Lead | Software Engineer @ Miller Development
+        to: https://www.linkedin.com/in/andrew-vincoy-226014169/
         avatar:
           src: /avatars/testimonials/andrew-vincoy-profile-image.jpeg
     - quote: |
@@ -135,6 +136,7 @@ testimonials:
       author:
         name: Asa Bain
         description: Tech Lead | Senior Software Engineer @ Miller Development
+        to: https://www.linkedin.com/in/asa-bain-6bb980119/
         avatar:
           src: /avatars/testimonials/asa-bain-profile-image.jpeg
 

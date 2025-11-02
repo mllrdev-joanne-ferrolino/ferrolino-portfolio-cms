@@ -17,10 +17,10 @@
    ```bash
    # Update all blog posts
    pnpm blog:update
-   
+
    # Update a specific file
    pnpm blog:update-file content/blog/my-post-slug.md
-   
+
    # Refresh images for all posts (fetches new random tech images)
    pnpm blog:refresh-images
    ```
@@ -127,7 +127,7 @@ To automatically fetch tech-related images:
    ```bash
    # Add to your ~/.bashrc or ~/.zshrc
    export NUXT_PEXELS_API_KEY="your_api_key_here"
-   
+
    # Or use a .env file in project root
    echo "NUXT_PEXELS_API_KEY=your_api_key_here" >> .env
    ```
@@ -136,7 +136,7 @@ To automatically fetch tech-related images:
    ```bash
    # New posts will automatically get random tech images
    pnpm blog:update
-   
+
    # Force refresh all existing images
    pnpm blog:refresh-images
    ```
