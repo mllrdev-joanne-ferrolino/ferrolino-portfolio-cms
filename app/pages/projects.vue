@@ -20,11 +20,31 @@ const projects = computed(() =>
 
 const { global } = useAppConfig()
 
+const siteUrl = 'https://www.seancramones.com'
+const title = page.value?.seo?.title || page.value?.title || 'Projects - Sean Erick C. Ramones'
+const description = page.value?.seo?.description || page.value?.description || 'Explore projects and work by Sean Erick C. Ramones.'
+const ogImage = `${siteUrl}/og-image.png`
+const pageUrl = `${siteUrl}/projects`
+
 useSeoMeta({
-  title: page.value?.seo?.title || page.value?.title,
-  ogTitle: page.value?.seo?.title || page.value?.title,
-  description: page.value?.seo?.description || page.value?.description,
-  ogDescription: page.value?.seo?.description || page.value?.description
+  title,
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  ogImage,
+  ogUrl: pageUrl,
+  ogType: 'website',
+  twitterCard: 'summary_large_image',
+  twitterTitle: title,
+  twitterDescription: description,
+  twitterImage: ogImage,
+  twitterSite: '@ramones_sean'
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: pageUrl }
+  ]
 })
 </script>
 

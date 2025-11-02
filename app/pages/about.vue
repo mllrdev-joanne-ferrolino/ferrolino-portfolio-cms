@@ -10,11 +10,33 @@ if (!page.value) {
   })
 }
 
+const siteUrl = 'https://www.seancramones.com'
+const title = page.value?.seo?.title || page.value?.title || 'About - Sean Erick C. Ramones'
+const description = page.value?.seo?.description || page.value?.description || 'Learn more about Sean Erick C. Ramones, a full-stack engineer specializing in Vue.js and modern web technologies.'
+const ogImage = page.value?.profileImage?.src 
+  ? `${siteUrl}${page.value.profileImage.src}` 
+  : `${siteUrl}/og-image.png`
+const pageUrl = `${siteUrl}/about`
+
 useSeoMeta({
-  title: page.value?.seo?.title || page.value?.title,
-  ogTitle: page.value?.seo?.title || page.value?.title,
-  description: page.value?.seo?.description || page.value?.description,
-  ogDescription: page.value?.seo?.description || page.value?.description
+  title,
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  ogImage,
+  ogUrl: pageUrl,
+  ogType: 'profile',
+  twitterCard: 'summary_large_image',
+  twitterTitle: title,
+  twitterDescription: description,
+  twitterImage: ogImage,
+  twitterSite: '@ramones_sean'
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: pageUrl }
+  ]
 })
 </script>
 

@@ -30,14 +30,33 @@ if (page.value.image) {
   })
 }
 
+const siteUrl = 'https://www.seancramones.com'
 const title = page.value?.seo?.title || page.value?.title
 const description = page.value?.seo?.description || page.value?.description
+const ogImage = page.value?.image || `${siteUrl}/og-image.png`
+const pageUrl = `${siteUrl}${route.path}`
 
 useSeoMeta({
   title,
   description,
+  ogTitle: title,
   ogDescription: description,
-  ogTitle: title
+  ogImage,
+  ogUrl: pageUrl,
+  ogType: 'article',
+  articlePublishedTime: page.value?.date,
+  articleAuthor: [page.value?.author?.name],
+  twitterCard: 'summary_large_image',
+  twitterTitle: title,
+  twitterDescription: description,
+  twitterImage: ogImage,
+  twitterSite: '@ramones_sean'
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: pageUrl }
+  ]
 })
 
 const articleLink = computed(() => `${window?.location}`)
