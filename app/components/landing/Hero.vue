@@ -106,12 +106,13 @@ const snsLinks = computed(() => props.page.snsLinks ?? [])
       >
         <div
           v-if="page.hero.links"
-          class="flex items-center gap-2"
+          class="w-full flex flex-col sm:flex-row items-center gap-2"
         >
           <UButton
             v-for="link in page.hero.links"
             v-bind="link"
             :key="link.label"
+            class="w-full sm:w-auto"
           />
           <UButton
             :color="(page.now?.available ?? global.available) ? 'success' : 'error'"
