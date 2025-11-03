@@ -13,8 +13,8 @@ if (!page.value) {
 const siteUrl = 'https://www.seancramones.com'
 const title = page.value?.seo?.title || page.value?.title || 'About - Sean Erick C. Ramones'
 const description = page.value?.seo?.description || page.value?.description || 'Learn more about Sean Erick C. Ramones, a full-stack engineer specializing in Vue.js and modern web technologies.'
-const ogImage = page.value?.profileImage?.src 
-  ? `${siteUrl}${page.value.profileImage.src}` 
+const ogImage = page.value?.profileImage?.src
+  ? `${siteUrl}${page.value.profileImage.src}`
   : `${siteUrl}/og-image.png`
 const pageUrl = `${siteUrl}/about`
 
@@ -87,7 +87,27 @@ useHead({
         :value="page.content"
         unwrap="p"
       />
-      <div class="flex flex-row justify-center items-center py-10 space-x-[-2rem]">
+
+      <!-- Mobile/Tablet: Carousel (below md breakpoint) -->
+      <UCarousel
+        v-slot="{ item }"
+        :items="page.images"
+        :autoplay="{ delay: 3000 }"
+        :ui="{ item: 'basis-1/2 sm:basis-1/3' }"
+        loop
+        dots
+        class="md:hidden py-10"
+      >
+        <div class="flex justify-center py-2">
+          <PolaroidItem
+            :image="item"
+            :index="0"
+          />
+        </div>
+      </UCarousel>
+
+      <!-- Desktop: Overlapping polaroid layout (md and above) -->
+      <div class="hidden md:flex flex-row justify-center items-center py-10 space-x-[-2rem]">
         <PolaroidItem
           v-for="(image, index) in page.images"
           :key="index"
