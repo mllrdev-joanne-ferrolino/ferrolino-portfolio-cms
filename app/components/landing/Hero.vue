@@ -117,6 +117,7 @@ const snsLinks = computed(() => props.page.snsLinks ?? [])
               :href="link.to"
               target="_blank"
               download
+              class="text-center w-full"
             >{{ link.label }}</a>
           </UButton>
           <UButton
