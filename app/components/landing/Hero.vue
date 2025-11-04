@@ -110,10 +110,15 @@ const snsLinks = computed(() => props.page.snsLinks ?? [])
         >
           <UButton
             v-for="link in page.hero.links"
-            v-bind="link"
             :key="link.label"
             class="w-full sm:w-auto"
-          />
+          >
+            <a
+              :href="link.to"
+              target="_blank"
+              download
+            >{{ link.label }}</a>
+          </UButton>
           <UButton
             :color="(page.now?.available ?? global.available) ? 'success' : 'error'"
             variant="ghost"
