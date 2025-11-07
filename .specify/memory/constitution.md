@@ -1,10 +1,16 @@
 <!--
 Sync Impact Report:
-- Version change: none → 1.0.0 (initial constitution creation)
-- Added principles: Content-First Architecture, Type-Safe Schema Validation, Nuxt UI Component System, Composition API Patterns, pnpm Workflow Standards
-- Added sections: Development Standards, Content Management Guidelines
-- Templates requiring updates: ✅ Updated all references in plan-template.md
+- Version change: 1.0.0 → 1.0.1 (speckit template migration)
+- Modified principles: None (structure validated against new speckit standards)
+- Added sections: None
+- Removed sections: None
+- Templates requiring updates:
+  ✅ plan-template.md - Constitution Check gate verified and aligned
+  ✅ spec-template.md - User story prioritization and FR structure verified
+  ✅ tasks-template.md - Task categorization aligns with principles
+  ⚠️ New speckit prompt files added to .github/prompts/ (not requiring updates)
 - Follow-up TODOs: None
+- Bump rationale: PATCH - Sync Impact Report updated for speckit migration, dates updated, no semantic changes to principles or governance
 -->
 
 # Nuxt Portfolio CMS Constitution
@@ -83,4 +89,4 @@ This constitution supersedes all other development practices and guidelines. All
 - New components MUST follow Nuxt UI patterns
 - Use `.github/copilot-instructions.md` for detailed runtime development guidance
 
-**Version**: 1.0.0 | **Ratified**: 2025-10-07 | **Last Amended**: 2025-10-07
+**Version**: 1.0.1 | **Ratified**: 2025-10-07 | **Last Amended**: 2025-11-07
