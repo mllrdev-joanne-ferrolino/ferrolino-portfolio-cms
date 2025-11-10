@@ -38,8 +38,7 @@ export default defineNuxtConfig({
   },
 
   hub: {
-    database: true,
-    blob: true
+    database: true
   },
 
   eslint: {
