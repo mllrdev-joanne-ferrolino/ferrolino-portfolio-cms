@@ -1,15 +1,11 @@
 seo:
-  title: Sean Erick C. Ramones | Full-stack Software Engineer
-  description: Welcome to my portfolio! I'm Sean Erick Ramones, and I build digital solutions that are both beautiful and functional.
-
+  title: Joanne P. Ferrolino | Full-stack Software Engineer
+  description: Welcome to my portfolio! I'm Joanne Ferrolino, and I build digital solutions that are both beautiful and functional.
 profileImage:
-  src: /avatars/profile-image-1.png
-  alt: Profile image of Sean Erick Ramones
-
-title: Hi! I'm Sean Erick Ramones, a Software Engineer
-
+  src: /avatars/profile-image.jpg
+  alt: Profile image of Joanne Ferrolino
+title: Hi! I'm Joanne Ferrolino, a Software Engineer
 description: I create intuitive, scalable applications where design meets functionality, turning complex ideas into seamless user experiences.
-
 snsLinks:
   - icon: i-simple-icons-linkedin
     to: https://www.linkedin.com/in/sean-erick-ramones-102a64192
@@ -27,7 +23,6 @@ snsLinks:
     to: https://www.instagram.com/sean.e.ramz
     target: _blank
     aria-label: Sean Erick Ramones on Instagram
-
 hero:
   links:
     - label: Download Resume
@@ -36,7 +31,7 @@ hero:
       color: neutral
       variant: outline
       icon: i-lucide-download
-      download: "Resume - Sean Erick Ramones"
+      download: Resume - Sean Erick Ramones
   images:
     - src: /hero/nodejs.png
       alt: Node.js logo
@@ -64,7 +59,6 @@ hero:
       alt: Jira logo
     - src: /hero/github-copilot.png
       alt: GitHub Copilot logo
-
 now:
   openTo:
     - Full-time
@@ -72,13 +66,10 @@ now:
     - Remote (UTC+8 overlap)
   available: true
   meetingLink: https://calendly.com/seancramones/15-min-quick-chat
-
+  currently: []
 about:
   title: About Me
-  description: |
-    As a full-stack software engineer with over 7 years of experience, I specialize in building modern, performant web applications with a strong focus on usability and design consistency.
-    My approach blends technical depth with user-centered thinking—translating complex ideas into scalable, accessible digital products that balance functionality, performance, and great user experience.
-
+  description: As a full-stack software engineer with over 5 years of experience, I specialize in building modern, performant web applications with a strong focus on usability and design consistency.My approach blends technical depth with user-centered thinking—translating complex ideas into scalable, accessible digital products that balance functionality, performance, and great user experience.
 experience:
   title: Work Experience
   items:
@@ -106,11 +97,9 @@ experience:
         url: https://www.bettertradeoff.com
       description: Spearheaded AngularJS to Angular v12+ migration strategy by introducing reusable Web Components and modernizing onboarding portals, login systems, and admin dashboards to reduce technical debt.
       index: 3
-
 blog:
   title: Latest Articles
   description: Some of my recent thoughts
-
 testimonials:
   title: Testimonials
   description: Feedback from colleagues and clients.
@@ -139,7 +128,6 @@ testimonials:
         to: https://www.linkedin.com/in/asa-bain-6bb980119/
         avatar:
           src: /avatars/testimonials/asa-bain-profile-image.jpeg
-
 faq:
   title: Frequently Asked Questions
   description: Answers to common questions about how I work, collaborate, and what I’m looking for next.
