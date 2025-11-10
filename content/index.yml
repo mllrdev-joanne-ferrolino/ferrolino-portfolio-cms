@@ -1,10 +1,10 @@
 seo:
-  title: Joanne P. Ferrolino | Full-stack Software Engineer
+  title: Joanne P. Ferrolino | Full-stack Software Developer
   description: Welcome to my portfolio! I'm Joanne Ferrolino, and I build digital solutions that are both beautiful and functional.
 profileImage:
   src: /avatars/profile-image.jpg
   alt: Profile image of Joanne Ferrolino
-title: Hi! I'm Joanne Ferrolino, a Software Engineer
+title: Hi! I'm Joanne Ferrolino, a Software Developer
 description: I create intuitive, scalable applications where design meets functionality, turning complex ideas into seamless user experiences.
 snsLinks:
   - icon: i-simple-icons-linkedin
@@ -12,15 +12,15 @@ snsLinks:
     target: _blank
     aria-label: Sean Erick Ramones on Linkedin
   - icon: i-simple-icons-github
-    to: https://github.com/sean-erick-ramones
+    to: https://github.com/mllrdev-joanne-ferrolino
     target: _blank
     aria-label: Sean Erick Ramones on GitHub
-  - icon: i-simple-icons-x
-    to: https://x.com/ramones_sean
+  - icon: i-simple-icons-facebook
+    to: https://www.facebook.com/joferrolino
     target: _blank
     aria-label: Nuxt on X
   - icon: i-simple-icons-instagram
-    to: https://www.instagram.com/sean.e.ramz
+    to: https://www.instagram.com/joooenggg_/
     target: _blank
     aria-label: Sean Erick Ramones on Instagram
 hero:
@@ -64,7 +64,7 @@ now:
     - Full-time
     - Contract
     - Remote (UTC+8 overlap)
-  available: true
+  available: false
   meetingLink: https://calendly.com/seancramones/15-min-quick-chat
   currently: []
 about:
