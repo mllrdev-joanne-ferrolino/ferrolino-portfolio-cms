@@ -26,7 +26,7 @@ snsLinks:
 hero:
   links:
     - label: Download Resume
-      to: /documents/sean-ramones-resume.pdf
+      to: /documents/updated-cv.pdf
       target: _blank
       color: neutral
       variant: outline
@@ -79,24 +79,8 @@ experience:
         name: Miller Development AB
         logo: i-lucide-code-xml
         url: https://millerdevelopment.se
-      description: Led full-stack development across international clients, progressing from mid-level to Vue SME while building scalable dashboards, HR SaaS products, and ML-integrated platforms using Vue, Nuxt, Node.js, FastAPI, and serverless architecture.
+      description: Specializing in C#/.NET and Optimizely DXP for high-volume B2B e-commerce platforms hosted on Azure. Led development efforts to automate site creation and streamline data synchronization through custom C# APIs, message queues, and scheduled jobs. Engineered key platform extensions for user management and automated product content updates, significantly reducing manual effort and accelerating content delivery. Managed application lifecycle from deployment to scaling, and collaborated closely with clients and teams to define requirements and resolve critical production issues.
       index: 2
-    - position: Full-stack Software Developer
-      date: Jun 2018 - Apr 2019
-      company:
-        name: SCI Global Services Inc.
-        logo: i-lucide-flask-conical
-        url: http://sciglobalservices.com/
-      description: Developed B2B websites and digital marketing solutions for laboratory and medical markets, delivering full-stack web applications with integrated graphic design and interactive media.
-      index: 1
-    - position: Software Developer (Contractual)
-      date: May 2023 - Jan 2024
-      company:
-        name: Better Trade Off Ltd.
-        logo: i-simple-icons-angular
-        url: https://www.bettertradeoff.com
-      description: Spearheaded AngularJS to Angular v12+ migration strategy by introducing reusable Web Components and modernizing onboarding portals, login systems, and admin dashboards to reduce technical debt.
-      index: 3
 blog:
   title: Latest Articles
   description: Some of my recent thoughts
