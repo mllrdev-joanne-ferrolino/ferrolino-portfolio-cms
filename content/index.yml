@@ -1,37 +1,37 @@
 seo:
-  title: Joanne P. Ferrolino | Full-stack Software Developer
-  description: Welcome to my portfolio! I'm Joanne Ferrolino, and I build digital solutions that are both beautiful and functional.
+  title: Joanne P. Ferrolino | Software Developer
+  description: Software developer with 5+ years of experience building scalable e-commerce solutions and enterprise integrations using C#, .NET, and modern JavaScript frameworks.
 profileImage:
   src: /avatars/profile-image.jpg
   alt: Profile image of Joanne Ferrolino
-title: Hi! I'm Joanne Ferrolino, a Software Developer
-description: I create intuitive, scalable applications where design meets functionality, turning complex ideas into seamless user experiences.
+title: Hi! I'm Joanne P. Ferrolino, a Software Developer
+description: Software developer with 5+ years of experience building scalable e-commerce solutions and enterprise integrations.
 snsLinks:
   - icon: i-simple-icons-linkedin
     to: https://www.linkedin.com/in/joanne-ferrolino/
     target: _blank
-    aria-label: Sean Erick Ramones on Linkedin
+    aria-label: Joanne Ferrolino on LinkedIn
   - icon: i-simple-icons-github
     to: https://github.com/mllrdev-joanne-ferrolino
     target: _blank
-    aria-label: Sean Erick Ramones on GitHub
+    aria-label: Joanne Ferrolino on GitHub
   - icon: i-simple-icons-facebook
     to: https://www.facebook.com/joferrolino
     target: _blank
-    aria-label: Nuxt on X
+    aria-label: Joanne Ferrolino on Facebook
   - icon: i-simple-icons-instagram
     to: https://www.instagram.com/joooenggg_/
     target: _blank
-    aria-label: Sean Erick Ramones on Instagram
+    aria-label: Joanne Ferrolino on Instagram
 hero:
   links:
     - label: Download Resume
-      to: /documents/updated-cv.pdf
+      to: /documents/joanne-ferrolino-resume.pdf
       target: _blank
       color: neutral
       variant: outline
       icon: i-lucide-download
-      download: Resume - Sean Erick Ramones
+      download: Resume - Joanne Ferrolino
   images:
     - src: /hero/nodejs.png
       alt: Node.js logo
@@ -64,22 +64,31 @@ now:
     - Full-time
     - Contract
     - Remote (UTC+8 overlap)
-  available: false
-  meetingLink: https://calendly.com/seancramones/15-min-quick-chat
-  currently: []
+  available: true
 about:
   title: About Me
-  description: As a full-stack software engineer with over 5 years of experience, I specialize in building modern, performant web applications with a strong focus on usability and design consistency.My approach blends technical depth with user-centered thinking—translating complex ideas into scalable, accessible digital products that balance functionality, performance, and great user experience.
+  description: Software developer with 5+ years of experience in scalable e-commerce platforms, enterprise integrations, and API-driven solutions using C#, .NET, and JavaScript frameworks.
 experience:
-  title: Work Experience
+  title: Professional Experience
+  description: Highlights from Joanne’s recent roles and impact.
   items:
-    - position: Full-stack Software Engineer
-      date: May 2019 - Present
+    - position: Software Developer
+      date: 2021-05-01
       company:
-        name: Miller Development AB
+        name: Miller Solutions Development
         logo: i-lucide-code-xml
         url: https://millerdevelopment.se
-      description: Specializing in C#/.NET and Optimizely DXP for high-volume B2B e-commerce platforms hosted on Azure. Led development efforts to automate site creation and streamline data synchronization through custom C# APIs, message queues, and scheduled jobs. Engineered key platform extensions for user management and automated product content updates, significantly reducing manual effort and accelerating content delivery. Managed application lifecycle from deployment to scaling, and collaborated closely with clients and teams to define requirements and resolve critical production issues.
+        color: blue
+      description: Architected and deployed production-ready C# APIs for high-traffic Optimizely e-commerce platforms, improving customer account management and reducing manual data entry. Built automated data synchronization using scheduled jobs and message queues, and developed Optimizely extensions for product image uploads and content updates. Managed Azure deployments, monitoring, and incident response to maintain 99.9% uptime while collaborating with stakeholders to translate business needs into technical specifications.
+      index: 1
+    - position: Entry-Level Software Developer
+      date: 2020-02-01
+      company:
+        name: Miller Solutions Development
+        logo: i-lucide-code-xml
+        url: https://millerdevelopment.se
+        color: blue
+      description: Developed responsive web and mobile UIs with Angular and Vue.js, designed normalized database schemas using ER modeling, and maintained existing features based on user feedback with a focus on quality and debugging.
       index: 2
 blog:
   title: Latest Articles
@@ -89,11 +98,11 @@ testimonials:
   description: Feedback from colleagues and clients.
   items:
     - quote: |
-        I’ve had the pleasure of working with Sean for four years. During that time, he’s been my go-to person whenever I have questions about frontend development. While I’ve been more focused on backend work, I’ve always admired how proficient Sean is with frontend technologies and how he consistently stays up to date with the latest tools and best practices.
+        I’ve had the pleasure of working with Joanne for several years. During that time, she’s been my go-to person whenever I have questions about frontend development. While I’ve been more focused on backend work, I’ve always admired how proficient Joanne is with frontend technologies and how she consistently stays up to date with the latest tools and best practices.
 
-        Sean is easy to work with, approachable, and always willing to help. He explains things clearly and patiently, making collaboration smooth and productive. He brings both technical skill and a great attitude to the team, which makes him a valuable teammate and a great person to work with.
+        Joanne is easy to work with, approachable, and always willing to help. She explains things clearly and patiently, making collaboration smooth and productive. She brings both technical skill and a great attitude to the team, which makes her a valuable teammate and a great person to work with.
 
-        I highly recommend Sean to any team looking for a skilled frontend developer who’s not only technically strong but also genuinely collaborative and supportive.
+        I highly recommend Joanne to any team looking for a skilled software developer who’s not only technically strong but also genuinely collaborative and supportive.
       author:
         name: Andrew Vincoy
         description: Tech Lead | Software Engineer @ Miller Development
@@ -101,11 +110,11 @@ testimonials:
         avatar:
           src: /avatars/testimonials/andrew-vincoy-profile-image.jpeg
     - quote: |
-        I had the privilege of working with Sean Ramones on multiple projects at Miller Development, where he consistently stood out as a dependable and capable Full Stack Developer.
+        I had the privilege of working with Joanne Ferrolino on multiple projects at Miller Development, where she consistently stood out as a dependable and capable software developer.
 
-        Sean combines strong technical skills with an impressive ability to adapt, collaborate, and deliver high-quality results. He approaches every task with ownership and attention to detail, ensuring that his work not only meets requirements but also contributes to the overall stability and performance of the product.
+        Joanne combines strong technical skills with an impressive ability to adapt, collaborate, and deliver high-quality results. She approaches every task with ownership and attention to detail, ensuring that her work not only meets requirements but also contributes to the overall stability and performance of the product.
 
-        I strongly recommend Sean for any software development role. He is the kind of developer who not only delivers excellent work but also inspires collaboration and continuous improvement in those around him.
+        I strongly recommend Joanne for any software development role. She is the kind of developer who not only delivers excellent work but also inspires collaboration and continuous improvement in those around her.
       author:
         name: Asa Bain
         description: Tech Lead | Senior Software Engineer @ Miller Development
@@ -120,13 +129,13 @@ faq:
       questions:
         - label: What kinds of projects do you focus on?
           content: |
-            I build full‑stack web applications, dashboards, and SaaS platforms with data‑rich, user‑friendly interfaces. On the frontend I primarily use Vue/Nuxt (and React when needed). On the backend I work with Node.js and FastAPI, with PostgreSQL/Supabase for data, and modern serverless/cloud platforms like Vercel and Cloudflare.
+            I build scalable e-commerce platforms and enterprise integrations with API-driven architectures. My core stack is C#, .NET, and JavaScript frameworks like Angular and Vue.js, with cloud deployments on Microsoft Azure and Optimizely DXP.
         - label: How do you ensure scalability and code quality?
           content: |
-            I favor type‑safe code (TypeScript), clear architecture and modular components, automated testing where it matters, and performance profiling. I document decisions, use code reviews, and set up CI to keep quality high as the product grows.
+            I focus on clear architecture, reliable API design, automated deployments, and strong monitoring practices. I document decisions, use code reviews, and lean on CI/CD pipelines to keep quality high and releases stable.
         - label: Do you work on greenfield or existing codebases?
           content: |
-            Both. I enjoy greenfield builds and I’m experienced in migrations and modernization—e.g., leading an AngularJS → Angular upgrade using Web Components while reducing technical debt.
+            Both. I enjoy greenfield builds and I’m experienced in modernizing existing systems with careful refactors, incremental improvements, and close collaboration with stakeholders.
     - title: Compensation & Availability
       questions:
         - label: How do you approach compensation discussions?
@@ -148,16 +157,10 @@ faq:
       questions:
         - label: What do you enjoy outside of work?
           content: |
-            - Running
-            - Cross‑fit training
-            - Watching anime
-            - Reading Japanese manga/light novels
-            - Playing MOBA games (Dota 2) and relaxing games (Stardew Valley)
-            - Driving and exploring new places
-            - Coffee! Whether it's brewing pour-over or using the espresso machine and creating (terrible) latter art.
+            I enjoy learning new tools, refining engineering practices, and collaborating on product strategy beyond day‑to‑day coding.
         - label: What motivates your work as an engineer?
           content: |
-            Turning complex ideas into scalable, well‑designed products that feel effortless to use. I love shaping systems where design consistency, performance, and developer experience work together.
+            Building scalable, reliable systems that solve real business problems, especially in e-commerce and enterprise integrations.
         - label: What tech do you prefer working with?
           content: |
-            Vue 3, Nuxt, Node.js, FastAPI, PostgreSQL/Supabase, and modern tooling (Vite, GitHub, CI/CD). I’m pragmatic and will choose the right tool for the job.
+            C#, .NET Core, ASP.NET, JavaScript, TypeScript, Angular, Vue.js, SQL, and cloud tooling on Microsoft Azure and Optimizely DXP.

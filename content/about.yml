@@ -1,35 +1,30 @@
 title: About Me
-description: A bit more about my journey as a full‑stack engineer and how I build scalable, user‑centric products.
+description: A bit more about my journey as a software developer building scalable e-commerce solutions and enterprise integrations.
 profileImage:
   src: /avatars/profile-image-1.png
-  alt: Sean Erick C. Ramones
+  alt: Joanne P. Ferrolino
 content: |
-  Hi, I'm **Sean Erick Ramones**, a full‑stack software engineer with over 7 years of experience building modern, performant web applications.
+  Hi, I'm **Joanne P. Ferrolino**, a software developer with 5+ years of experience building scalable e-commerce solutions and enterprise integrations. I’m based in **Dumaguete City, Philippines**.
 
-  I focus on turning complex ideas into elegant, scalable products where design consistency, performance, and developer experience all click. On the frontend I prefer **Vue 3** and **Nuxt**; on the backend **Node.js** and **FastAPI**; for data, **PostgreSQL/Supabase**; and I deploy to modern serverless/cloud platforms like **Vercel** and **Cloudflare**.
+  My core stack includes **C#**, **.NET**, and modern JavaScript frameworks like **Angular** and **Vue.js**. I specialize in API design, cloud deployment on **Microsoft Azure** and **Optimizely DXP**, and delivering production-ready features that drive business value.
 
-  ### What I care about
+  ### What I focus on
 
-  - Type‑safe code and clean architecture
-  - Reusable components and design systems
-  - Performance, accessibility, and DX
-  - CI/CD and code review culture that scales
+  - Clean, maintainable architecture and reliable APIs
+  - Scalable e-commerce and enterprise integrations
+  - CI/CD pipelines, monitoring, and production stability
+  - Clear communication and stakeholder alignment
 
-  ### Selected experience
+  ### Professional experience
 
-  - Miller Development AB — Full‑stack Software Engineer (Hybrid, 2019–Present)
-  - Better Trade Off Ltd. — Software Developer (Contract, 2023–2024)
-  - SCI Global Services — Full‑stack Software Developer (On-site, 2018–2019)
+  - Miller Solutions Development — Software Developer (2021–Present)
+  - Miller Solutions Development — Entry-Level Software Developer (2020–2021)
 
-  ### Beyond the code
+  ### Education
 
-  - Running and cross‑fit training
-  - Watching anime; reading Japanese manga/light novels
-  - Playing MOBA games (**Dota 2**) and relaxing games (**Stardew Valley**)
-  - Driving and exploring new places
-  - Making espresso coffee and showing my (terrible) latte art to friends/colleagues.
+  - Bachelor of Science in Information Technology — Negros Oriental State University (2017)
 
-  If you’d like to collaborate, reach me at **seancramones@gmail.com** or connect on [LinkedIn](https://www.linkedin.com/in/sean-erick-ramones-102a64192).
+  If you’d like to collaborate, reach me at **joferrolino0109@gmail.com** or connect on [LinkedIn](https://www.linkedin.com/in/joanne-ferrolino/).
 images:
   - src: /about/awareness-run-2024-dumagete.jpg
     alt: Awareness Run 2024 in Dumaguete
@@ -49,7 +44,4 @@ now:
     - Full-time
     - Contract
     - Remote (UTC+8 overlap)
-  currently:
-    - Building data-rich dashboards with Nuxt
-    - Learning advanced serverless patterns
   availability: Accepting new projects now

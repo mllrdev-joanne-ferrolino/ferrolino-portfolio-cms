@@ -58,8 +58,6 @@ export default defineContentConfig({
           // Availability controls for hero CTA moved to content
           available: z.boolean().optional(),
           meetingLink: z.string().optional(),
-          // Legacy/optional fields (not rendered):
-          currently: z.array(z.string()).optional(),
           availability: z.string().optional()
         }).optional(),
         experience: createBaseSchema().extend({
@@ -139,7 +137,6 @@ export default defineContentConfig({
           // Keep same shape for consistency; about page UI will only render openTo
           available: z.boolean().optional(),
           meetingLink: z.string().optional(),
-          currently: z.array(z.string()).optional(),
           availability: z.string().optional()
         }).optional()
       })

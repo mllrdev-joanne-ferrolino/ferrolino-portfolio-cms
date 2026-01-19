@@ -31,30 +31,7 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-**Principle I - Content-First Architecture**:
-- [ ] All page content managed via YAML/Markdown in `content/` directory
-- [ ] Zod schemas defined in `content.config.ts` for new content types
-- [ ] No hardcoded content in components (structural elements only)
-
-**Principle II - Type-Safe Schema Validation**:
-- [ ] Content collections have corresponding Zod schemas
-- [ ] Auto-generated types from `@nuxt/content` are leveraged
-- [ ] Schema changes include migration plan
-
-**Principle III - Nuxt UI Component System**:
-- [ ] Components use Nuxt UI library over custom implementations
-- [ ] Tailwind utilities used over custom CSS
-- [ ] Custom components follow PascalCase naming and expose variant APIs
-
-**Principle IV - Composition API Patterns**:
-- [ ] Components use Composition API with `<script setup>`
-- [ ] TypeScript interfaces defined for all props
-- [ ] Specific types imported from `@nuxt/content`
-
-**Principle V - pnpm Workflow Standards**:
-- [ ] Package management uses `pnpm` exclusively
-- [ ] ESLint standards followed (comma-dangle: never, braceStyle: 1tbs)
-- [ ] Commands executed through pnpm scripts in package.json
+[Gates determined based on constitution file]
 
 ## Project Structure
 

@@ -1,92 +1,50 @@
-<!--
-Sync Impact Report:
-- Version change: 1.0.0 → 1.0.1 (speckit template migration)
-- Modified principles: None (structure validated against new speckit standards)
-- Added sections: None
-- Removed sections: None
-- Templates requiring updates:
-  ✅ plan-template.md - Constitution Check gate verified and aligned
-  ✅ spec-template.md - User story prioritization and FR structure verified
-  ✅ tasks-template.md - Task categorization aligns with principles
-  ⚠️ New speckit prompt files added to .github/prompts/ (not requiring updates)
-- Follow-up TODOs: None
-- Bump rationale: PATCH - Sync Impact Report updated for speckit migration, dates updated, no semantic changes to principles or governance
--->
-
-# Nuxt Portfolio CMS Constitution
+# [PROJECT_NAME] Constitution
+<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
 
 ## Core Principles
 
-### I. Content-First Architecture (NON-NEGOTIABLE)
-All page content MUST be managed via YAML/Markdown files in `content/` directory with strict Zod schemas defined in `content.config.ts`. Content-driven architecture ensures separation of concerns, enables non-technical content updates, and provides automatic type safety. NO hardcoded content in components except structural elements.
+### [PRINCIPLE_1_NAME]
+<!-- Example: I. Library-First -->
+[PRINCIPLE_1_DESCRIPTION]
+<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
 
-**Rationale**: Content management flexibility and maintainability are core to portfolio template usability.
+### [PRINCIPLE_2_NAME]
+<!-- Example: II. CLI Interface -->
+[PRINCIPLE_2_DESCRIPTION]
+<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
 
-### II. Type-Safe Schema Validation
-Every content collection MUST have a corresponding Zod schema in `content.config.ts` that validates structure and generates TypeScript types. All content operations MUST leverage auto-generated types from `@nuxt/content`. Schema changes require version consideration and migration planning.
+### [PRINCIPLE_3_NAME]
+<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
+[PRINCIPLE_3_DESCRIPTION]
+<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
 
-**Rationale**: Type safety prevents runtime errors and provides excellent developer experience for content management.
+### [PRINCIPLE_4_NAME]
+<!-- Example: IV. Integration Testing -->
+[PRINCIPLE_4_DESCRIPTION]
+<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
 
-### III. Nuxt UI Component System
-Components MUST use Nuxt UI library components over custom implementations. Custom CSS SHOULD be avoided in favor of Tailwind utilities and Nuxt UI's variant system (`color`, `variant`, `size` props). When custom components are necessary, they MUST follow PascalCase naming and expose consistent variant APIs.
+### [PRINCIPLE_5_NAME]
+<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
+[PRINCIPLE_5_DESCRIPTION]
+<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
 
-**Rationale**: Consistency, maintainability, and leveraging battle-tested component patterns.
+## [SECTION_2_NAME]
+<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
 
-### IV. Composition API Patterns
-All Vue components MUST use Composition API with `<script setup>` syntax. TypeScript interfaces MUST be defined for all props. Components MUST import specific types from `@nuxt/content` rather than using generic types.
+[SECTION_2_CONTENT]
+<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
 
-**Rationale**: Modern Vue patterns, better TypeScript integration, and explicit type safety.
+## [SECTION_3_NAME]
+<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
 
-### V. pnpm Workflow Standards
-Package management MUST use `pnpm` exclusively (not npm/yarn). ESLint configuration MUST follow project standards: comma-dangle: never, braceStyle: 1tbs. All commands MUST be executed through pnpm scripts defined in package.json.
-
-**Rationale**: Consistent tooling, performance benefits of pnpm, and standardized code formatting.
-
-## Development Standards
-
-**Technology Stack Requirements**:
-- Nuxt 4 with Vue 3 Composition API
-- TypeScript for all logic
-- Nuxt UI (Tailwind-based) for components
-- Nuxt Content for file-based CMS
-- Motion-v for animations
-- @nuxt/eslint for code quality
-
-**Critical File Dependencies**:
-- `content.config.ts` - Schema definitions (changes require careful review)
-- `app/app.config.ts` - Global configuration (colors, UI settings, profile data)
-- `nuxt.config.ts` - Module configuration and prerendering settings
-
-## Content Management Guidelines
-
-**Content Structure Standards**:
-- `content/index.yml` - Homepage content (hero, about, testimonials, FAQ)
-- `content/projects/*.yml` - Individual project data files
-- `content/blog/*.md` - Blog posts with frontmatter metadata
-- `content/{about,projects,blog,speaking}.yml` - Page-specific configurations
-
-**Content Creation Process**:
-1. Reference Zod schema in `content.config.ts` for required fields
-2. Validate content structure against schema
-3. Test content rendering in development environment
-4. Verify TypeScript compilation passes
-
-**Animation Standards**:
-Motion-v animations MUST follow consistent patterns with opacity, scale, and blur transitions. Standard timing: duration 0.6s, delay 0.1s increments.
+[SECTION_3_CONTENT]
+<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
 
 ## Governance
+<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-This constitution supersedes all other development practices and guidelines. All changes to core architecture, content schemas, or component patterns MUST be evaluated against these principles. Violations require explicit justification and approval process.
+[GOVERNANCE_RULES]
+<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
 
-**Amendment Process**:
-- MAJOR version: Backward incompatible principle changes or removal
-- MINOR version: New principle additions or expanded guidance  
-- PATCH version: Clarifications, wording improvements, non-semantic updates
-
-**Compliance Requirements**:
-- All PRs MUST verify adherence to content-first architecture
-- Schema changes MUST include migration plan
-- New components MUST follow Nuxt UI patterns
-- Use `.github/copilot-instructions.md` for detailed runtime development guidance
-
-**Version**: 1.0.1 | **Ratified**: 2025-10-07 | **Last Amended**: 2025-11-07
+**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
+<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
