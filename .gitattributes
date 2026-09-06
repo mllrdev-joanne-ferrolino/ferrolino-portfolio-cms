@@ -1,0 +1,3 @@
+# Mark these as JSON for linguist detection
+.mcp.json linguist-language=JSON
+opencode.json linguist-language=JSON
