@@ -45,10 +45,25 @@ useHead({
         container: '!pt-0 lg:grid lg:grid-cols-2 lg:gap-8'
       }"
     >
-      <LandingAbout :page />
-      <LandingWorkExperience :page />
+      <div
+        id="about"
+        class="scroll-mt-14"
+      >
+        <LandingAbout :page />
+      </div>
+      <div
+        id="experience"
+        class="scroll-mt-14"
+      >
+        <LandingWorkExperience :page />
+      </div>
     </UPageSection>
-    <LandingBlog :page />
+    <div
+      id="works"
+      class="scroll-mt-14"
+    >
+      <LandingBlog :page />
+    </div>
     <LandingTestimonials :page />
     <LandingFAQ :page />
   </UPage>
