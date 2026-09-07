@@ -1,0 +1,90 @@
+seo:
+  title: Joanne P. Ferrolino | Software Developer
+  description: Full-stack software developer based in Dumaguete City, Philippines, specializing in C#/.NET, Optimizely CMS, and e-commerce platforms.
+hero:
+  eyebrow: Software Development
+  title: PORTFOLIO
+  photo:
+    src: /joanne-profile-image.jpg
+    alt: Joanne P. Ferrolino
+  name: Joanne P. Ferrolino
+  role: Software Developer
+  year: "2026"
+about:
+  title: About me
+  photo:
+    src: /joanne-profile-image.jpg
+    alt: Joanne P. Ferrolino
+  name: Joanne P. Ferrolino
+  location: Dumaguete City, Negros Oriental, Philippines
+  bio: |
+    [TODO: real bio. Draft signal: backend-leaning full-stack developer,
+    C#/.NET and Optimizely CMS, e-commerce platforms, Vue/Nuxt frontend.]
+specialty:
+  title: Specialty
+  label: Software Development
+toolkit:
+  title: My toolkit
+  items:
+    - { label: C# / .NET }
+    - { label: ASP.NET Core }
+    - { label: Optimizely CMS }
+    - { label: MSSQL }
+    - { label: RabbitMQ }
+    - { label: Visma }
+    - { label: SQL }
+    - { label: Vue / Nuxt }
+    - { label: TypeScript }
+    - { label: Azure Cloud }
+    - { label: HTML / CSS / JS }
+    - { label: E-commerce }
+experience:
+  title: Experience
+  items:
+    - position: Full-stack Software Developer
+      company: Miller Solutions Development AB
+      date: 2020 - Present
+      description: "[TODO: short description. Signal: C#/.NET, Optimizely DXP, e-commerce on Azure.]"
+    - position: "[TODO: second role]"
+      company: "[TODO]"
+      date: "[TODO]"
+      description: "[TODO]"
+works:
+  title: Selected Works
+  subtitle: Professional & Personal Projects
+  items:
+    - title: Voky AB
+      type: eCommerce Web App
+      tag: Professional Project
+      url: https://www.voky.com/
+    - title: "[TODO: project 2]"
+      type: "[TODO]"
+      tag: Personal Project
+    - title: "[TODO: project 3]"
+      type: "[TODO]"
+      tag: Personal Project
+  moreLabel: More projects coming soon...
+connect:
+  title: Let's connect!
+  message: "[TODO: short closing message. Draft: Thank you for visiting my portfolio. I'm always open to new opportunities to build, learn, and grow as a developer.]"
+  email: joferrolino0109@gmail.com
+  socials:
+    - icon: i-simple-icons-linkedin
+      to: https://www.linkedin.com/in/joanne-ferrolino/
+      target: _blank
+      aria-label: Joanne Ferrolino on LinkedIn
+    - icon: i-simple-icons-github
+      to: https://github.com/mllrdev-joanne-ferrolino
+      target: _blank
+      aria-label: Joanne Ferrolino on GitHub
+    - icon: i-simple-icons-instagram
+      to: https://www.instagram.com/joooenggg_/
+      target: _blank
+      aria-label: Joanne Ferrolino on Instagram
+    - icon: i-simple-icons-facebook
+      to: https://www.facebook.com/joferrolino
+      target: _blank
+      aria-label: Joanne Ferrolino on Facebook
+  qr:
+    url: https://www.linkedin.com/in/joanne-ferrolino/
+    caption: Scan to see more of my work!
