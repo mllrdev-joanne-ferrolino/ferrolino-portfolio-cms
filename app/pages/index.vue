@@ -40,5 +40,6 @@ useHead({
 <template>
   <div v-if="page">
     <PortfolioHero :page />
+    <PortfolioAbout :page />
   </div>
 </template>

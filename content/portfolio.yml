@@ -26,17 +26,17 @@ specialty:
 toolkit:
   title: My toolkit
   items:
-    - { label: C# / .NET }
-    - { label: ASP.NET Core }
+    - { label: C# / .NET, icon: i-simple-icons-csharp }
+    - { label: ASP.NET Core, icon: i-simple-icons-dotnet }
     - { label: Optimizely CMS }
-    - { label: MSSQL }
-    - { label: RabbitMQ }
+    - { label: MSSQL, icon: i-simple-icons-microsoftsqlserver }
+    - { label: RabbitMQ, icon: i-simple-icons-rabbitmq }
     - { label: Visma }
     - { label: SQL }
-    - { label: Vue / Nuxt }
-    - { label: TypeScript }
-    - { label: Azure Cloud }
-    - { label: HTML / CSS / JS }
+    - { label: Vue / Nuxt, icon: i-simple-icons-nuxt }
+    - { label: TypeScript, icon: i-simple-icons-typescript }
+    - { label: Azure Cloud, icon: i-simple-icons-microsoftazure }
+    - { label: HTML / CSS / JS, icon: i-simple-icons-html5 }
     - { label: E-commerce }
 experience:
   title: Experience
