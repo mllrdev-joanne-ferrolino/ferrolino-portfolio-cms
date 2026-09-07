@@ -20,7 +20,6 @@ defineProps<{
     >
       <template #list-trailing>
         <UContentSearchButton variant="ghost" />
-        <ColorModeButton />
       </template>
     </UNavigationMenu>
   </div>

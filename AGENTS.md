@@ -78,3 +78,17 @@ Scripts live in `scripts/update-blog-frontmatter.mjs`. They read `.env` manually
 - No traditional database for content (D1 exists via Hub module but unused).
 - No i18n, no auth, no API routes, no Edge Functions.
 - Not a monorepo (pnpm workspace is single-project, only configures build deps).
+
+## Agent skills
+
+### Issue tracker
+
+Issues are tracked as GitHub Issues in this repo. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The five canonical triage labels are used: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context layout: `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.

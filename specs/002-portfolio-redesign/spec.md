@@ -21,12 +21,14 @@ Turn the multi-page portfolio into a single-page portfolio for Joanne P. Ferroli
 - Right: anchor links About, Experience, Works, Contact. Small, muted, underline on hover/active.
 - Background: white with slight blur/translucency; thin bottom border in `havelock-blue-100`.
 - Smooth scroll (`scroll-behavior: smooth`, `scroll-margin-top` on sections so anchors don't hide under the header).
+- Mobile: anchor links collapse into a hamburger menu; header stays compact.
 
 ### Hero
 
 - Eyebrow: small caps "SOFTWARE DEVELOPMENT" (letterspaced, `havelock-blue-600`), thin rule under it like the mockup.
 - Giant "PORTFOLIO" display type in `havelock-blue-300`, stacked/overlapping the photo. Letter-spacing tight, Quicksand bold.
 - Photo: `joanne-profile-image.jpg` (B&W) in a soft oval/blob mask (border-radius or SVG mask), centered, overlapping the type, ~40-45% viewport height.
+- Mobile: type scales down, photo reflows above the name/role block; nothing clips.
 - Below: name in blue, "Software Developer" in muted, year ("2026", dynamic from current year), small divider.
 - Decorative sparkles (inline SVG) top-right and near the name, same style as mockup.
 - No resume download button in this design (TODO: add when a resume exists).
@@ -52,7 +54,7 @@ Turn the multi-page portfolio into a single-page portfolio for Joanne P. Ferroli
 
 - Heading "SELECTED WORKS" (Quicksand, blue), rule, sparkles.
 - Subtitle: "Professional & Personal Projects".
-- Grid: 2-3 columns (responsive), gap-6. Cards: rounded-2xl, soft `havelock-blue-50`/`100` gradient background, image area (aspect ~4:3), then title (medium), type (muted), tag (small, blue, e.g., "Professional Project").
+- Grid: 2-3 columns (responsive, 1 column on mobile), gap-6. Cards: rounded-2xl, soft `havelock-blue-50`/`100` gradient background, image area (aspect ~4:3), then title (medium), type (muted), tag (small, blue, e.g., "Professional Project").
 - Card 1 (real): Voky AB, type "eCommerce Web App", tag "Professional Project", links to https://www.voky.com/. Image: gradient placeholder until a screenshot exists.
 - Cards 2-3: placeholders, tag "Personal Project", "[TODO]" type. Gradient placeholders, no assets.
 - Trailing card: full-width soft blue card, star icon, "More projects coming soon...".
@@ -73,6 +75,8 @@ Turn the multi-page portfolio into a single-page portfolio for Joanne P. Ferroli
 - Primary: havelock blue (see ADR 0003). Background white. All accents from the palette.
 - Fonts: Quicksand (display, headings), Public Sans (body). Loaded via @fontsource-variable packages.
 - Light only. No dark toggle, no dark styles.
+- Contrast discipline: body copy stays neutral dark on white; havelock blue is for headings, accents, and the decorative giant type. No light-blue body text.
+- Decorative section markers (small "02", "03" numbers) in the mockup's style are kept; they are `aria-hidden`.
 - Animations: motion-v fade/slide-up on scroll into view, subtle (300-500ms, small offsets). Decorative elements may have gentle float animations, keep it tasteful.
 
 ## Placeholders and TODOs (not blockers for design)
@@ -85,7 +89,7 @@ Turn the multi-page portfolio into a single-page portfolio for Joanne P. Ferroli
 | Voky screenshot / card images | gradient placeholder, needs real screenshots |
 | Connect message | placeholder draft |
 | OG image, favicon | keep existing as placeholder, or simple "JP" mark |
-| Domain / site URL | placeholder `joanneferrolino.vercel.app`; note: repo deploys via Cloudflare Pages, confirm host later |
+| Domain / site URL | placeholder `joanneferrolino.vercel.app`; deployment stays Cloudflare Pages, domain TBD |
 | QR code library | `qrcode` client-side; verify it builds cleanly on Cloudflare Pages |
 | Dark mode | deferred, separate design pass (noted, not forgotten) |
 | Resume / CV | dropped from design until a file exists |

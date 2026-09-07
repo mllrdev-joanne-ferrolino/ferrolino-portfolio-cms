@@ -1,13 +1,12 @@
 export default defineAppConfig({
   global: {
-    meetingLink: 'https://calendly.com/seancramones/15-min-quick-chat',
-    email: 'seancramones@gmail.com',
-    available: true
+    email: 'joferrolino0109@gmail.com',
+    available: false,
+    meetingLink: ''
   },
   ui: {
     colors: {
-      primary: 'green',
-      secondary: 'stone',
+      primary: 'havelock-blue',
       neutral: 'neutral'
     },
     pageHero: {
@@ -19,32 +18,32 @@ export default defineAppConfig({
     }
   },
   footer: {
-    credits: `Built with Nuxt UI • © ${new Date().getFullYear()}`,
+    credits: `Built with Nuxt UI \u2022 \u00a9 ${new Date().getFullYear()}`,
     colorMode: false,
     links: [
       {
         'icon': 'i-simple-icons-linkedin',
-        'to': 'https://www.linkedin.com/in/sean-erick-ramones-102a64192/',
+        'to': 'https://www.linkedin.com/in/joanne-ferrolino/',
         'target': '_blank',
-        'aria-label': 'Sean Erick Ramones on Linkedin'
+        'aria-label': 'Joanne Ferrolino on LinkedIn'
       },
       {
         'icon': 'i-simple-icons-github',
-        'to': 'https://github.com/sean-erick-ramones',
+        'to': 'https://github.com/mllrdev-joanne-ferrolino',
         'target': '_blank',
-        'aria-label': 'Sean Erick Ramones on GitHub'
-      },
-      {
-        'icon': 'i-simple-icons-x',
-        'to': 'https://x.com/ramones_sean',
-        'target': '_blank',
-        'aria-label': 'Nuxt on X'
+        'aria-label': 'Joanne Ferrolino on GitHub'
       },
       {
         'icon': 'i-simple-icons-instagram',
-        'to': 'https://www.instagram.com/sean.e.ramz',
+        'to': 'https://www.instagram.com/joooenggg_/',
         'target': '_blank',
-        'aria-label': 'Sean Erick Ramones on Instagram'
+        'aria-label': 'Joanne Ferrolino on Instagram'
+      },
+      {
+        'icon': 'i-simple-icons-facebook',
+        'to': 'https://www.facebook.com/joferrolino',
+        'target': '_blank',
+        'aria-label': 'Joanne Ferrolino on Facebook'
       }
     ]
   }

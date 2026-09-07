@@ -14,6 +14,8 @@
     "blog:update-file": "node scripts/update-blog-frontmatter.mjs"
   },
   "dependencies": {
+    "@fontsource-variable/public-sans": "^5.2.5",
+    "@fontsource-variable/quicksand": "^5.2.5",
     "@iconify-json/lucide": "^1.2.68",
     "@iconify-json/simple-icons": "^1.2.54",
     "@nuxt/content": "^3.7.1",

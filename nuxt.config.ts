@@ -16,6 +16,11 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  colorMode: {
+    preference: 'light',
+    fallback: 'light'
+  },
+
   content: {
     preview: {
       api: 'https://api.nuxt.studio'
