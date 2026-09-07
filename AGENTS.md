@@ -1,6 +1,6 @@
 # AGENTS.md — ferrolino-portfolio-cms
 
-Nuxt 4 portfolio + blog CMS for seancramones.com. Content-driven, file-based CMS (YAML + Markdown), hosted on Cloudflare Pages via NuxtHub.
+Nuxt 4 single-page portfolio CMS for joferrolino.com. Content-driven, file-based CMS (YAML), hosted on Cloudflare Pages via NuxtHub.
 
 ## First setup
 
@@ -33,37 +33,22 @@ Build OOMs without the increased memory limit. CI runs these three sequentially.
 
 ## Content architecture
 
-All content is file-based (not from a database or headless CMS).
+All content is file-based (not from a database or headless CMS). A single `portfolio` collection drives the whole site:
 
-| Source | Format | Collection (content.config.ts) |
+| Source | Format | Collection |
 |---|---|---|
-| `content/index.yml` | YAML | `index` |
-| `content/about.yml` | YAML | `about` |
-| `content/projects/*.yml` | YAML | `projects` |
-| `content/blog/*.md` | Markdown + frontmatter | `blog` |
-| `content/projects.yml`, `content/blog.yml` | YAML | `pages` (meta pages with links) |
+| `content/portfolio.yml` | YAML | `portfolio` |
 
-Required blog frontmatter: `title`, `description`, `date`, `image`, `minRead`, `author` (with `name`, `avatar.src`, `avatar.alt`). The schema in `content.config.ts` is the authoritative reference.
-
-### Blog management scripts
-
-```bash
-pnpm blog:update              # normalize all blog posts (title, description, minRead, date, author, image)
-pnpm blog:update-file <path>  # normalize a single post
-pnpm blog:refresh-images      # re-fetch Pexels images for all posts
-```
-
-Scripts live in `scripts/update-blog-frontmatter.mjs`. They read `.env` manually (dotenv devDependency). Author info and Pexels API key are configured inside the script / `.env`.
+The schema in `content.config.ts` defines sections: seo, hero, about, specialty, toolkit, experience, works, and connect.
 
 ## Key paths (Nuxt 4 app directory)
 
 | Path | Purpose |
 |---|---|
-| `app/pages/` | Route pages (index, about, projects, blog) |
-| `app/components/landing/` | Homepage section components (Hero, About, Blog, FAQ, Testimonials, WorkExperience) |
-| `app/components/` | Shared components (AppHeader, AppFooter, ColorModeButton, PolaroidItem) |
+| `app/pages/` | Route pages (index only — single-page site) |
+| `app/components/portfolio/` | Section components (Hero) |
+| `app/components/` | Shared components (AppHeader, AppFooter) |
 | `app/app.config.ts` | Global app config (colors, profile, footer links) |
-| `app/utils/` | Auto-imported utilities (`links.ts`, `clipboard.ts`) |
 
 ## Deployment
 
@@ -76,6 +61,7 @@ Scripts live in `scripts/update-blog-frontmatter.mjs`. They read `.env` manually
 
 - No test framework or test files.
 - No traditional database for content (D1 exists via Hub module but unused).
+- No blog, no blog content, no blog scripts.
 - No i18n, no auth, no API routes, no Edge Functions.
 - Not a monorepo (pnpm workspace is single-project, only configures build deps).
 

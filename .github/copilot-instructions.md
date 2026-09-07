@@ -1,34 +1,26 @@
-# Copilot Instructions for Nuxt Portfolio CMS
+# Copilot Instructions for Ferrolino Portfolio CMS
 
-This is a Nuxt 4 portfolio template built with Nuxt UI and Nuxt Content, featuring a type-safe CMS architecture with YAML/Markdown content management.
+This is a Nuxt 4 single-page portfolio built with Nuxt UI and Nuxt Content, featuring a type-safe CMS architecture with YAML content management.
 
 ## Architecture Overview
 
-**Tech Stack**: Nuxt 4, Vue 3 Composition API, TypeScript, Nuxt UI (Tailwind-based), Nuxt Content (file-based CMS), YAML/Markdown content, Motion animations, pnpm workspace
+**Tech Stack**: Nuxt 4, Vue 3 Composition API, TypeScript, Nuxt UI (Tailwind-based), Nuxt Content (file-based CMS), YAML content, motion-v animations, pnpm workspace
 
 **Key Patterns**:
-- **Content-driven architecture**: All page content is managed via YAML/Markdown files in `content/` with strict Zod schemas in `content.config.ts`
-- **Component structure**: Landing page sections in `components/landing/`, reusable UI in `components/`, layouts in `layouts/`
-- **Type safety**: Heavily typed content collections with auto-generated types from `@nuxt/content`
+- **Content-driven architecture**: All page content is managed via a single YAML file (`content/portfolio.yml`) with strict Zod schemas in `content.config.ts`
+- **Component structure**: Section components in `components/portfolio/`, shared components in `components/`
+- **Type safety**: Heavily typed content collection with auto-generated types from `@nuxt/content`
 
 ## Content Management System
 
-The project uses a sophisticated file-based CMS with strict typing:
+The project uses a file-based CMS with strict typing via a single `portfolio` collection:
 
 ```typescript
-// content.config.ts defines collections with Zod schemas
-const createButtonSchema = () => z.object({
-  label: z.string(),
-  to: z.string().optional(),
-  color: z.enum(['primary', 'neutral', 'success', 'warning', 'error', 'info']).optional()
-})
+// content.config.ts defines the collection with Zod schemas
 ```
 
 **Content Structure**:
-- `content/index.yml` - Homepage content (hero, about, testimonials, FAQ)
-- `content/projects/*.yml` - Project data files
-- `content/blog/*.md` - Blog posts with frontmatter
-- `content/{about,projects,blog,speaking}.yml` - Page-specific content
+- `content/portfolio.yml` - All portfolio content (seo, hero, about, specialty, toolkit, experience, works, connect)
 
 **Adding Content**: Always reference the Zod schema in `content.config.ts` for required fields and types. Content is automatically validated and provides full TypeScript support.
 
@@ -39,19 +31,18 @@ const createButtonSchema = () => z.object({
 **Styling**: Nuxt UI components with Tailwind utilities, avoid custom CSS when possible
 
 ```vue
-<!-- Example component pattern -->
 <script setup lang="ts">
-import type { IndexCollectionItem } from '@nuxt/content'
+import type { PortfolioCollectionItem } from '@nuxt/content'
 
 defineProps<{
-  page: IndexCollectionItem  // Auto-generated type from content schema
+  page: PortfolioCollectionItem
 }>()
 </script>
 
 <template>
-  <UPageHero>  <!-- Nuxt UI component -->
+  <UPageHero>
     <template #title>
-      <Motion>  <!-- Animation wrapper -->
+      <Motion>
         <!-- Content -->
       </Motion>
     </template>
@@ -64,8 +55,8 @@ defineProps<{
 - `content.config.ts` - Content schema definitions (critical for content changes)
 - `app/app.config.ts` - Global app configuration (colors, UI settings, profile data)
 - `nuxt.config.ts` - Module configuration, prerendering settings
-- `components/landing/` - Homepage section components (Hero.vue, About.vue, etc.)
-- `pages/[...slug].vue` - Catch-all routes for blog posts
+- `components/portfolio/` - Section components (Hero.vue)
+- `content/portfolio.yml` - All portfolio content
 
 ## Development Workflow
 
@@ -87,23 +78,12 @@ Uses `motion-v` for animations. Common pattern:
 >
 ```
 
-## Content Management Tips
-
-- **Adding projects**: Create YAML file in `content/projects/` following the schema
-- **Blog posts**: Markdown files in `content/blog/` with required frontmatter (date, image, author, minRead)
-- **Homepage updates**: Edit `content/index.yml` sections (hero, about, testimonials, etc.)
-- **Type safety**: Always check `content.config.ts` for required fields before creating content
-
 ## Common Patterns
 
-- Use `UColorModeAvatar` for profile images with light/dark variants
 - Leverage Nuxt UI's variant system (`color`, `variant`, `size` props)
 - Content queries via `@nuxt/content` return fully typed objects
 - Global config accessible via `useAppConfig()` composable
 
 ## Active Technologies
-- TypeScript 5.x, Vue 3 (Composition API), Nuxt 4.1 + @nuxt/content (file-based CMS), @nuxthub/core (blob storage), @nuxt/ui (components), motion-v (animations) (001-tribute-blog-post)
-- Cloudflare R2 via NuxtHub blob storage (video and images already uploaded) (001-tribute-blog-post)
 
-## Recent Changes
-- 001-tribute-blog-post: Added TypeScript 5.x, Vue 3 (Composition API), Nuxt 4.1 + @nuxt/content (file-based CMS), @nuxthub/core (blob storage), @nuxt/ui (components), motion-v (animations)
+- TypeScript 5.x, Vue 3 (Composition API), Nuxt 4.1 + @nuxt/content (file-based CMS), @nuxthub/core, @nuxt/ui (components), motion-v (animations)

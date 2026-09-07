@@ -2,21 +2,16 @@
 
 ## What Was Updated
 
-All pages now have comprehensive SEO metadata including:
+The site now has comprehensive SEO metadata including:
 
 - **Meta tags**: `title`, `description`
 - **Open Graph tags**: `og:title`, `og:description`, `og:image`, `og:url`, `og:type`
 - **Twitter Card tags**: `twitter:card`, `twitter:title`, `twitter:description`, `twitter:image`, `twitter:site`
 - **Canonical URLs**: For proper indexing
-- **Article metadata**: For blog posts (published time, author)
 
 ### Updated Pages
 
-1. **Homepage** (`/`) - Type: `website`
-2. **About** (`/about`) - Type: `profile`
-3. **Projects** (`/projects`) - Type: `website`
-4. **Blog Index** (`/blog`) - Type: `website`
-5. **Blog Posts** (`/blog/[slug]`) - Type: `article`
+1. **Homepage** (`/`) - Type: `website` (single-page site)
 
 ---
 
@@ -27,7 +22,7 @@ All pages now have comprehensive SEO metadata including:
 **URL**: https://developers.facebook.com/tools/debug/
 
 **How to use**:
-1. Enter your URL: `https://www.seancramones.com`
+1. Enter your URL
 2. Click "Debug"
 3. Review the preview (title, description, image)
 4. Click "Scrape Again" if you made changes
@@ -95,14 +90,12 @@ All pages now have comprehensive SEO metadata including:
 
 ## Testing Checklist
 
-For each page, verify:
+For the page, verify:
 
 - [ ] **Title** displays correctly (not too long, ~60 chars)
 - [ ] **Description** is compelling (155-160 chars recommended)
 - [ ] **Image** loads and displays properly (1200x630px recommended)
 - [ ] **URL** is correct (no localhost or dev URLs)
-- [ ] **Site name** shows as "Sean Erick C. Ramones"
-- [ ] **Twitter handle** is `@ramones_sean`
 
 ---
 
@@ -122,19 +115,19 @@ For each page, verify:
 **Solution**: Use "Scrape Again" in Facebook Debugger or wait 24 hours for cache to clear
 
 ### Issue: Image not displaying
-**Solution**: 
+**Solution**:
 - Ensure image URL is absolute (starts with `https://`)
 - Check image exists and is accessible
 - Verify image meets size requirements
 
 ### Issue: Wrong title/description
-**Solution**: 
+**Solution**:
 - Clear browser cache
 - Use incognito mode
 - Verify meta tags with "View Page Source"
 
 ### Issue: 404 error when sharing
-**Solution**: 
+**Solution**:
 - Ensure page is deployed and accessible
 - Check canonical URL matches actual URL
 - Verify SSL certificate is valid
@@ -145,28 +138,8 @@ For each page, verify:
 
 ### View meta tags in terminal:
 ```bash
-curl -s https://www.seancramones.com | grep -i "og:\|twitter:"
+curl -s https://yourdomain.com | grep -i "og:\|twitter:"
 ```
-
-### Check specific page:
-```bash
-curl -s https://www.seancramones.com/blog/your-post | grep -i "og:image"
-```
-
----
-
-## Create Default OG Image
-
-You need to create `/public/og-image.png` (1200x630px) with:
-- Your name/brand
-- Professional photo or logo
-- Clean background
-- Readable text
-
-### Tools to create OG images:
-- [Canva](https://www.canva.com/) - Templates available
-- [Figma](https://www.figma.com/) - Design from scratch
-- [OG Image Playground](https://og-playground.vercel.app/) - Generate programmatically
 
 ---
 
@@ -210,7 +183,6 @@ You need to create `/public/og-image.png` (1200x630px) with:
 - [ ] All pages load and display correct meta
 - [ ] Images appear on all platforms
 - [ ] No broken links in canonical URLs
-- [ ] Twitter handle is correct
 - [ ] Titles are not truncated
 - [ ] Descriptions are compelling
 - [ ] Mobile previews look good

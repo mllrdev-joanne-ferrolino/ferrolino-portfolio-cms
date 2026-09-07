@@ -1,30 +1,25 @@
-# Ramones Portfolio CMS
+# Ferrolino Portfolio CMS
 
-[![Nuxt 4](https://img.shields.io/badge/Nuxt-4.1-00DC82?logo=nuxt&labelColor=020420)](https://nuxt.com) [![Nuxt UI](https://img.shields.io/badge/UI-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com) ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white) ![pnpm](https://img.shields.io/badge/pnpm-10.x-F69220?logo=pnpm&logoColor=white) [![Website](https://img.shields.io/website?url=https%3A%2F%2Fwww.seancramones.com)](https://www.seancramones.com) [![CI](https://github.com/sean-erick-ramones/ramones-portfolio-cms/actions/workflows/ci.yml/badge.svg)](https://github.com/sean-erick-ramones/ramones-portfolio-cms/actions/workflows/ci.yml)
+[![Nuxt 4](https://img.shields.io/badge/Nuxt-4.1-00DC82?logo=nuxt&labelColor=020420)](https://nuxt.com) [![Nuxt UI](https://img.shields.io/badge/UI-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com) ![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white) ![pnpm](https://img.shields.io/badge/pnpm-10.x-F69220?logo=pnpm&logoColor=white)
 
-A content-driven, type-safe portfolio and blog built with Nuxt 4, Nuxt UI, and Nuxt Content. All site content (homepage sections, projects, blog) is managed via YAML/Markdown and validated with strict Zod schemas. Includes motion animations, OG image generation, and a smooth authoring workflow powered by a helper script and the Pexels API.
-
-Live: https://www.seancramones.com (hosted on Cloudflare Pages via NuxtHub)
+A single-page portfolio for Joanne Ferrolino built with Nuxt 4, Nuxt UI, and Nuxt Content. All content is managed via a single YAML file and validated with strict Zod schemas.
 
 ## Overview
 
-- Content-first architecture using `@nuxt/content`
+- Single-page architecture with `@nuxt/content`
 - Strong typing for collections via `content.config.ts` (Zod schemas)
-- Beautiful UI with Nuxt UI (Tailwind-based) and `motion-v` animations
-- File-based CMS: YAML (pages/projects) + Markdown (blog)
-- Auto OG image generation with `nuxt-og-image`
+- UI with Nuxt UI (Tailwind-based) and `motion-v` animations
+- File-based CMS: single `portfolio.yml` drives all sections
 - Hosted on Cloudflare Pages (Nitro preset configured)
 - Optional NuxtHub deploy workflow included
-- Authoring helper script to normalize blog front matter and fetch images
 
 ## Tech stack
 
 - Nuxt 4, Vue 3 (Composition API, `<script setup>`)
 - Nuxt UI, Tailwind utilities
 - Nuxt Content (file-based CMS)
-- TypeScript everywhere!
+- TypeScript everywhere
 - motion-v for animations
-- nuxt-og-image for social images
 - pnpm workspace
 
 ## Project structure
@@ -34,12 +29,11 @@ Key files and folders:
 - `content.config.ts` — Content schema definitions (Zod)
 - `app/app.config.ts` — Global app configuration (colors, profile, UI)
 - `nuxt.config.ts` — Modules and Nitro prerender config
-- `app/components/landing/` — Homepage sections (Hero, About, Blog, etc.)
-- `app/pages/` — Route pages (index, about, projects, blog)
-- `content/` — Content source (index.yml, about.yml, projects.yml, blog/*.md)
-- `public/` — Static assets (images, docs, etc.)
+- `app/components/portfolio/` — Section components (Hero)
+- `app/pages/` — Route pages (index only — single-page site)
+- `content/portfolio.yml` — All portfolio content
+- `public/` — Static assets (profile photo, OG image, favicon)
 - `.github/workflows/` — CI (lint/typecheck/build) and NuxtHub deployment
-- `scripts/` — Authoring helpers (front matter updater, templates, docs)
 
 ## Getting started
 
@@ -95,66 +89,18 @@ Tip: Set `NUXT_PUBLIC_SITE_URL` to your production domain for correct OG image U
 
 ## Content authoring
 
-This repo is designed for a simple copy/paste workflow from Notion or any editor into Markdown. A helper script normalizes front matter and keeps metadata consistent.
+All content lives in a single YAML file: `content/portfolio.yml`. The schema in `content.config.ts` defines these sections:
 
-Content locations:
-- Homepage: `content/index.yml`
-- Pages: `content/{about,projects,blog}.yml`
-- Projects: `content/projects/*.yml`
-- Blog posts: `content/blog/*.md`
+- `seo` — Page title and description
+- `hero` — Eyebrow, title, name, role, photo
+- `about` — Bio, photo, location
+- `specialty` — Specialization label
+- `toolkit` — Skills and tools
+- `experience` — Work history
+- `works` — Projects and portfolio items
+- `connect` — Contact info, social links, QR code
 
-### Front matter updater (scripts/update-blog-frontmatter.mjs)
-
-What it does:
-- Extracts title from first `#` heading
-- Generates description from the first paragraph
-- Calculates `minRead` from word count (200 wpm)
-- Derives `date` if it finds `[Month YYYY]` in the content, otherwise uses today
-- Injects author info
-- Chooses a featured image (see below)
-
-Commands:
-
-```bash
-# Update all blog posts
-pnpm blog:update
-
-# Update a single post
-pnpm blog:update-file content/blog/my-post.md
-
-# Refresh images for all posts (fetch new tech-related images)
-pnpm blog:refresh-images
-```
-
-Author details are configured in the script as:
-
-```
-author:
-  name: "Sean Erick C. Ramones"
-  avatar:
-    src: avatars/profile-image-1.png
-    alt: Sean Erick C. Ramones
-```
-
-### Featured images via Pexels API
-
-The script can auto-pick relevant, tech-themed images from Pexels based on your post title (keywords like vue, react, javascript, design, color, data). If no API key is provided, it falls back to a default image.
-
-Environment variable:
-
-```
-PEXELS_API_KEY=your_api_key_here
-```
-
-You can place it in a project `.env` file or export it in your shell. Example `.env` keys used in this repo:
-
-```
-# Public URL, used for OG Image when running nuxt generate
-NUXT_PUBLIC_SITE_URL=https://www.seancramones.com
-NUXT_PEXELS_API_KEY=your_api_key_here
-```
-
-Note: The script reads `.env` manually when run standalone, so it will work outside of Nuxt runtime.
+Edit the YAML file to update any section. The build validates the content against the Zod schema.
 
 ## Scripts
 
@@ -165,11 +111,8 @@ Available package scripts:
 - `pnpm preview` — Preview the built app
 - `pnpm lint` / `pnpm lint:fix` — ESLint
 - `pnpm typecheck` — TypeScript type checking
-- `pnpm blog:update` — Normalize all blog posts’ front matter
-- `pnpm blog:update-file <path>` — Normalize a single blog post
-- `pnpm blog:refresh-images` — Refresh featured images for posts via Pexels
 
-## CI/CD and deployment
+## CI/CD
 
 Workflows in `.github/workflows/`:
 
@@ -183,11 +126,8 @@ Primary hosting is Cloudflare Pages. Configure your Pages project to run the bui
 - **Node heap out of memory during build**
   Already mitigated in scripts and CI via `NODE_OPTIONS=--max-old-space-size=4096`.
 
-- **Missing blog images**
-  Provide `NUXT_PEXELS_API_KEY` (or `PEXELS_API_KEY` depending on your setup) in `.env`, or run without to use the default image.
-
 - **Content validation errors**
-  Check required fields in `content.config.ts`. All YAML/Markdown is validated at build time.
+  Check required fields in `content.config.ts`. All YAML is validated at build time.
 
 ## Acknowledgments
 
