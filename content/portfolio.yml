@@ -18,8 +18,21 @@ about:
   name: Joanne P. Ferrolino
   location: Dumaguete City, Negros Oriental, Philippines
   bio: |
-    [TODO: real bio. Draft signal: backend-leaning full-stack developer,
-    C#/.NET and Optimizely CMS, e-commerce platforms, Vue/Nuxt frontend.]
+    Hi! I'm Joanne, a full-stack software developer based in Dumaguete
+    City, Philippines, with a backend-leaning focus on C#/.NET and
+    Optimizely CMS. I build e-commerce platforms that hold up in
+    production, from the database up through a Vue/Nuxt frontend.
+
+    I like the parts of the job most people skip past: clean data
+    models, dependable integrations, and code that's still easy to
+    read a year later. Outside of client work, I keep sharpening my
+    frontend skills so I can own a feature end to end.
+
+    I also work with AI agents now, not just autocomplete. Claude Code
+    handles a lot of the scaffolding and refactors I used to write by
+    hand, but I still make the architecture calls and read every diff
+    before it ships. It's changed how fast I get from a ticket to a
+    working feature, not who's responsible when something breaks.
 specialty:
   title: Specialty
   label: Software Development
@@ -38,14 +51,16 @@ toolkit:
     - { label: Azure Cloud, icon: i-simple-icons-microsoftazure }
     - { label: HTML / CSS / JS, icon: i-simple-icons-html5 }
     - { label: E-commerce }
+    - { label: Claude Code, icon: i-simple-icons-claude }
+    - { label: GitHub Copilot, icon: i-simple-icons-githubcopilot }
 experience:
   title: Experience
   items:
     - position: Full-stack Software Developer
       company: Miller Solutions Development AB
       date: 2020 - Present
-      description: "[TODO: short description. Signal: C#/.NET, Optimizely DXP, e-commerce on Azure.]"
-    - position: "[TODO: second role]"
+      description: Building and maintaining e-commerce platforms on Optimizely DXP with C#/.NET, deployed on Azure.
+    - position: "[TODO]"
       company: "[TODO]"
       date: "[TODO]"
       description: "[TODO]"
@@ -57,6 +72,9 @@ works:
       type: eCommerce Web App
       tag: Professional Project
       url: https://www.voky.com/
+      image:
+        src: /works/voky-thumbnail.png
+        alt: Voky brand thumbnail
     - title: "[TODO: project 2]"
       type: "[TODO]"
       tag: Personal Project
@@ -66,25 +84,25 @@ works:
   moreLabel: More projects coming soon...
 connect:
   title: Let's connect!
-  message: "[TODO: short closing message. Draft: Thank you for visiting my portfolio. I'm always open to new opportunities to build, learn, and grow as a developer.]"
+  message: Thanks for scrolling this far. I'm always up for new work, especially anything that lets me dig into the backend or pick up a system I haven't touched yet.
   email: joferrolino0109@gmail.com
   socials:
-    - icon: i-simple-icons-linkedin
+    - label: linkedin.com/in/joanne-ferrolino
+      icon: i-simple-icons-linkedin
       to: https://www.linkedin.com/in/joanne-ferrolino/
       target: _blank
-      aria-label: Joanne Ferrolino on LinkedIn
-    - icon: i-simple-icons-github
+    - label: github.com/mllrdev-joanne-ferrolino
+      icon: i-simple-icons-github
       to: https://github.com/mllrdev-joanne-ferrolino
       target: _blank
-      aria-label: Joanne Ferrolino on GitHub
-    - icon: i-simple-icons-instagram
+    - label: "@joooenggg_"
+      icon: i-simple-icons-instagram
       to: https://www.instagram.com/joooenggg_/
       target: _blank
-      aria-label: Joanne Ferrolino on Instagram
-    - icon: i-simple-icons-facebook
+    - label: facebook.com/joferrolino
+      icon: i-simple-icons-facebook
       to: https://www.facebook.com/joferrolino
       target: _blank
-      aria-label: Joanne Ferrolino on Facebook
   qr:
     url: https://www.linkedin.com/in/joanne-ferrolino/
     caption: Scan to see more of my work!

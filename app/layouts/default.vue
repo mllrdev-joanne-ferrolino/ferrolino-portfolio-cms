@@ -2,13 +2,9 @@
 </script>
 
 <template>
-  <div>
+  <div class="bg-white">
     <AppHeader />
-    <UContainer class="sm:border-x border-default">
-      <slot />
-      <div id="contact">
-        <AppFooter />
-      </div>
-    </UContainer>
+    <slot />
+    <AppFooter />
   </div>
 </template>

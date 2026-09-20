@@ -41,5 +41,8 @@ useHead({
   <div v-if="page">
     <PortfolioHero :page />
     <PortfolioAbout :page />
+    <PortfolioExperience :page />
+    <PortfolioWorks :page />
+    <PortfolioConnect :page />
   </div>
 </template>

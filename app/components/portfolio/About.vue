@@ -11,6 +11,32 @@ const bioParagraphs = computed(() =>
     .map(paragraph => paragraph.trim())
     .filter(Boolean)
 )
+
+// Real simple-icons brand colors so toolkit badges read as colorful, not monochrome.
+const BRAND_COLORS: Record<string, string> = {
+  csharp: '#239120',
+  dotnet: '#512BD4',
+  microsoftsqlserver: '#CC2927',
+  rabbitmq: '#FF6600',
+  nuxt: '#00DC82',
+  typescript: '#3178C6',
+  microsoftazure: '#0078D4',
+  html5: '#E34F26',
+  claude: '#D97757',
+  githubcopilot: '#000000'
+}
+
+const FALLBACK_ICON = 'i-lucide-code-2'
+
+function toolkitIcon(icon?: string) {
+  return icon || FALLBACK_ICON
+}
+
+function toolkitColor(icon?: string) {
+  if (!icon) return undefined
+  const slug = icon.replace('i-simple-icons-', '')
+  return BRAND_COLORS[slug]
+}
 </script>
 
 <template>
@@ -21,13 +47,25 @@ const bioParagraphs = computed(() =>
     <UContainer>
       <!-- Section heading -->
       <div class="flex items-start justify-between">
-        <div>
-          <h2
-            class="font-display text-3xl sm:text-4xl font-bold uppercase tracking-tight text-havelock-blue-500"
+        <div class="flex items-center gap-3">
+          <div>
+            <h2
+              class="font-display text-3xl sm:text-4xl font-bold uppercase tracking-tight text-havelock-blue-500"
+            >
+              {{ page.about.title }}
+            </h2>
+            <div class="mt-3 h-1 w-14 rounded-full bg-havelock-blue-500" />
+          </div>
+          <svg
+            class="mt-1 size-5 text-havelock-blue-300"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
           >
-            {{ page.about.title }}
-          </h2>
-          <div class="mt-3 h-1 w-14 rounded-full bg-havelock-blue-500" />
+            <path d="M12 20s-7-4.35-9.5-8.5C.6 8.2 1.8 5 5 5c1.9 0 3.3 1 4 2.3C9.7 6 11.1 5 13 5c3.2 0 4.4 3.2 2.5 6.5C13 15.65 12 20 12 20z" />
+          </svg>
         </div>
 
         <!-- Decorative sparkle (inline SVG, hidden from AT) -->
@@ -43,7 +81,32 @@ const bioParagraphs = computed(() =>
 
       <!-- Photo + intro -->
       <div class="mt-10 grid gap-10 lg:grid-cols-5 lg:gap-16">
-        <div class="lg:col-span-2">
+        <div class="relative lg:col-span-2">
+          <!-- Dot-grid decoration (inline SVG pattern, hidden from AT) -->
+          <svg
+            class="absolute -bottom-4 -left-4 -z-10 size-20 text-havelock-blue-300"
+            aria-hidden="true"
+          >
+            <pattern
+              id="about-dot-grid"
+              width="10"
+              height="10"
+              patternUnits="userSpaceOnUse"
+            >
+              <circle
+                cx="2"
+                cy="2"
+                r="1.5"
+                fill="currentColor"
+              />
+            </pattern>
+            <rect
+              width="100%"
+              height="100%"
+              fill="url(#about-dot-grid)"
+            />
+          </svg>
+
           <NuxtImg
             :src="page.about.photo.src"
             :alt="page.about.photo.alt"
@@ -74,6 +137,17 @@ const bioParagraphs = computed(() =>
               {{ paragraph }}
             </p>
           </div>
+
+          <svg
+            class="mt-4 size-4 text-havelock-blue-300"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path d="M12 20s-7-4.35-9.5-8.5C.6 8.2 1.8 5 5 5c1.9 0 3.3 1 4 2.3C9.7 6 11.1 5 13 5c3.2 0 4.4 3.2 2.5 6.5C13 15.65 12 20 12 20z" />
+          </svg>
         </div>
       </div>
 
@@ -103,11 +177,12 @@ const bioParagraphs = computed(() =>
               class="flex items-center gap-3"
             >
               <span
-                v-if="item.icon"
-                class="flex size-10 shrink-0 items-center justify-center rounded-lg border border-havelock-blue-300 text-havelock-blue-500"
+                class="flex size-10 shrink-0 items-center justify-center rounded-lg border border-havelock-blue-200 bg-havelock-blue-50"
+                :style="{ color: toolkitColor(item.icon) }"
+                :class="{ 'text-havelock-blue-500': !toolkitColor(item.icon) }"
               >
                 <UIcon
-                  :name="item.icon"
+                  :name="toolkitIcon(item.icon)"
                   class="size-5"
                 />
               </span>

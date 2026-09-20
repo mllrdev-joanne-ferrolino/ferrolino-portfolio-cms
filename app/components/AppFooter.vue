@@ -4,8 +4,8 @@ const { footer } = useAppConfig()
 
 <template>
   <UFooter
-    class="z-10 bg-default"
-    :ui="{ left: 'text-muted text-xs' }"
+    class="z-10 border-t border-havelock-blue-100 bg-white"
+    :ui="{ left: 'text-neutral-500 text-xs' }"
   >
     <template #left>
       {{ footer.credits }}
@@ -16,7 +16,7 @@ const { footer } = useAppConfig()
         <UButton
           v-for="(link, index) of footer?.links"
           :key="index"
-          v-bind="{ size: 'xs', color: 'neutral', variant: 'ghost', ...link }"
+          v-bind="{ size: 'xs', color: 'primary', variant: 'ghost', ...link }"
         />
       </template>
     </template>

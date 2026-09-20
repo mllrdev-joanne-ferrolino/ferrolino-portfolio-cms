@@ -22,14 +22,12 @@ useSeoMeta({
 
 <template>
   <UApp>
-    <div class="min-h-screen bg-background text-foreground">
+    <div class="min-h-screen bg-white text-foreground">
       <AppHeader />
       <UMain>
-        <UContainer class="sm:border-x border-default">
-          <UPage>
-            <UError :error="error" />
-          </UPage>
-        </UContainer>
+        <UPage>
+          <UError :error="error" />
+        </UPage>
       </UMain>
       <AppFooter />
       <UToaster />

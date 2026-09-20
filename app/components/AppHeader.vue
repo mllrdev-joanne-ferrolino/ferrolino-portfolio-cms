@@ -10,7 +10,7 @@ const links: HeaderLink[] = [
   { label: 'About', to: '#about' },
   { label: 'Experience', to: '#experience' },
   { label: 'Works', to: '#works' },
-  { label: 'Contact', to: '#contact' }
+  { label: 'Contact', to: '#connect' }
 ]
 
 function scrollToTop() {
@@ -24,24 +24,24 @@ function closeMobile() {
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 w-full border-b border-default bg-background/80 backdrop-blur-md">
+  <header class="sticky top-0 z-50 w-full border-b border-havelock-blue-100 bg-white/85 backdrop-blur-md">
     <UContainer>
-      <div class="flex items-center justify-between h-14">
+      <div class="flex h-16 items-center justify-between">
         <!-- Wordmark -->
         <button
-          class="font-semibold text-lg tracking-tight"
+          class="font-display text-lg font-bold text-havelock-blue-600"
           @click="scrollToTop"
         >
           Joanne Ferrolino
         </button>
 
         <!-- Desktop nav -->
-        <nav class="hidden md:flex items-center gap-6">
+        <nav class="hidden items-center gap-8 md:flex">
           <a
             v-for="link in links"
             :key="link.label"
             :href="link.to"
-            class="text-sm text-muted hover:text-foreground transition-colors"
+            class="text-sm font-medium text-neutral-600 transition-colors hover:text-havelock-blue-600"
           >
             {{ link.label }}
           </a>
@@ -50,7 +50,7 @@ function closeMobile() {
         <!-- Mobile hamburger -->
         <UButton
           variant="ghost"
-          color="neutral"
+          color="primary"
           size="sm"
           class="md:hidden"
           :aria-label="isMobileOpen ? 'Close menu' : 'Open menu'"
@@ -67,15 +67,15 @@ function closeMobile() {
     <!-- Mobile nav panel -->
     <div
       v-if="isMobileOpen"
-      class="md:hidden border-t border-default bg-background"
+      class="border-t border-havelock-blue-100 bg-white md:hidden"
     >
       <UContainer>
-        <div class="flex flex-col py-4 gap-2">
+        <div class="flex flex-col gap-2 py-4">
           <a
             v-for="link in links"
             :key="link.label"
             :href="link.to"
-            class="text-sm text-muted hover:text-foreground transition-colors py-2 border-b border-default last:border-0"
+            class="border-b border-havelock-blue-100 py-2 text-sm font-medium text-neutral-600 transition-colors last:border-0 hover:text-havelock-blue-600"
             @click="closeMobile"
           >
             {{ link.label }}
