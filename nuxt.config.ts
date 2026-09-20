@@ -6,8 +6,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/content',
     '@vueuse/nuxt',
-    'motion-v/nuxt',
-    '@nuxthub/core'
+    'motion-v/nuxt'
   ],
 
   devtools: {
@@ -42,10 +41,6 @@ export default defineNuxtConfig({
     experimental: {
       openAPI: true
     }
-  },
-
-  hub: {
-    database: true
   },
 
   eslint: {

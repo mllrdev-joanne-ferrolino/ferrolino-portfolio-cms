@@ -86,4 +86,4 @@ Uses `motion-v` for animations. Common pattern:
 
 ## Active Technologies
 
-- TypeScript 5.x, Vue 3 (Composition API), Nuxt 4.1 + @nuxt/content (file-based CMS), @nuxthub/core, @nuxt/ui (components), motion-v (animations)
+- TypeScript 5.x, Vue 3 (Composition API), Nuxt 4.1 + @nuxt/content (file-based CMS), @nuxt/ui (components), motion-v (animations)

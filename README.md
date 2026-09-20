@@ -10,8 +10,7 @@ A single-page portfolio for Joanne Ferrolino built with Nuxt 4, Nuxt UI, and Nux
 - Strong typing for collections via `content.config.ts` (Zod schemas)
 - UI with Nuxt UI (Tailwind-based) and `motion-v` animations
 - File-based CMS: single `portfolio.yml` drives all sections
-- Hosted on Cloudflare Pages (Nitro preset configured)
-- Optional NuxtHub deploy workflow included
+- Hosted on Vercel
 
 ## Tech stack
 
@@ -26,14 +25,14 @@ A single-page portfolio for Joanne Ferrolino built with Nuxt 4, Nuxt UI, and Nux
 
 Key files and folders:
 
-- `content.config.ts` — Content schema definitions (Zod)
-- `app/app.config.ts` — Global app configuration (colors, profile, UI)
-- `nuxt.config.ts` — Modules and Nitro prerender config
-- `app/components/portfolio/` — Section components (Hero)
-- `app/pages/` — Route pages (index only — single-page site)
-- `content/portfolio.yml` — All portfolio content
-- `public/` — Static assets (profile photo, OG image, favicon)
-- `.github/workflows/` — CI (lint/typecheck/build) and NuxtHub deployment
+- `content.config.ts`: content schema definitions (Zod)
+- `app/app.config.ts`: global app configuration (colors, profile, UI)
+- `nuxt.config.ts`: modules and Nitro prerender config
+- `app/components/portfolio/`: section components (Hero, About, Experience, Works, Connect)
+- `app/pages/`: route pages (index only, single-page site)
+- `content/portfolio.yml`: all portfolio content
+- `public/`: static assets (profile photo, OG image, favicon)
+- `.github/workflows/`: CI (lint/typecheck/build)
 
 ## Getting started
 
@@ -66,39 +65,42 @@ Notes:
 - Nitro prerender is configured to be explicit and resilient (`crawlLinks: false`, `failOnError: false`).
 - If you encounter `GLib-GObject-CRITICAL` errors on Linux, see the Troubleshooting section below.
 
-## Deployment (Cloudflare Pages)
+## Deployment (Vercel)
 
-This project is deployed on Cloudflare Pages.
+This project deploys to Vercel. Nitro auto-detects the Vercel platform at build time, so no preset config is needed in `nuxt.config.ts`.
 
-Cloudflare settings:
+Vercel project settings:
+- Framework preset: Nuxt.js (auto-detected)
 - Build command: `pnpm build`
-- Build output directory: `dist`
-- Framework preset: None (Nitro preset `cloudflare-pages` generates the worker and assets)
+- Output directory: leave as Vercel's default for the Nuxt preset
 
-Local preview and deploy with Wrangler:
+Deploy with the Vercel CLI:
 
 ```bash
-# Preview the built site locally with Cloudflare Pages runtime
-npx wrangler pages dev dist
+# Link the local repo to a Vercel project (first time only)
+vercel link
 
-# Deploy the built site to Cloudflare Pages
-npx wrangler pages deploy dist
+# Deploy a preview
+vercel
+
+# Deploy to production
+vercel --prod
 ```
 
-Tip: Set `NUXT_PUBLIC_SITE_URL` to your production domain for correct OG image URLs.
+Tip: Set `NUXT_PUBLIC_SITE_URL` as a Vercel environment variable to your production domain for correct OG image URLs.
 
 ## Content authoring
 
 All content lives in a single YAML file: `content/portfolio.yml`. The schema in `content.config.ts` defines these sections:
 
-- `seo` — Page title and description
-- `hero` — Eyebrow, title, name, role, photo
-- `about` — Bio, photo, location
-- `specialty` — Specialization label
-- `toolkit` — Skills and tools
-- `experience` — Work history
-- `works` — Projects and portfolio items
-- `connect` — Contact info, social links, QR code
+- `seo`: page title and description
+- `hero`: eyebrow, title, name, role, photo
+- `about`: bio, photo, location
+- `specialty`: specialization label
+- `toolkit`: skills and tools
+- `experience`: work history
+- `works`: projects and portfolio items
+- `connect`: contact info, social links, QR code
 
 Edit the YAML file to update any section. The build validates the content against the Zod schema.
 
@@ -106,20 +108,19 @@ Edit the YAML file to update any section. The build validates the content agains
 
 Available package scripts:
 
-- `pnpm dev` — Start development server
-- `pnpm build` — Build for production (with increased Node memory)
-- `pnpm preview` — Preview the built app
-- `pnpm lint` / `pnpm lint:fix` — ESLint
-- `pnpm typecheck` — TypeScript type checking
+- `pnpm dev`: start development server
+- `pnpm build`: build for production (with increased Node memory)
+- `pnpm preview`: preview the built app
+- `pnpm lint` / `pnpm lint:fix`: ESLint
+- `pnpm typecheck`: TypeScript type checking
 
 ## CI/CD
 
 Workflows in `.github/workflows/`:
 
-- `ci.yml` — Runs on PRs and non-main pushes. Performs install, lint, typecheck, and a build (with increased Node memory) to validate changes.
-- `nuxthub.yml` — Optional: Deploy to NuxtHub on pushes to `main` if you choose to use NuxtHub.
+- `ci.yml`: runs on PRs and non-main pushes. Installs, lints, typechecks, and builds (with increased Node memory) to validate changes.
 
-Primary hosting is Cloudflare Pages. Configure your Pages project to run the build and output to `dist` (as above). Nuxt/Nitro is already configured for the `cloudflare-pages` preset.
+Hosting and deploys are handled by Vercel's own Git integration: pushes to `main` trigger a production deploy, other branches get preview deploys.
 
 ## Troubleshooting
 

@@ -1,6 +1,6 @@
-# AGENTS.md — ferrolino-portfolio-cms
+# AGENTS.md: ferrolino-portfolio-cms
 
-Nuxt 4 single-page portfolio CMS for joferrolino.com. Content-driven, file-based CMS (YAML), hosted on Cloudflare Pages via NuxtHub.
+Nuxt 4 single-page portfolio CMS for joferrolino.com. Content-driven, file-based CMS (YAML), hosted on Vercel.
 
 ## First setup
 
@@ -15,7 +15,7 @@ pnpm dev            # local dev server
 
 ```bash
 pnpm lint          # ESLint via @nuxt/eslint
-pnpm typecheck     # nuxt typecheck (requires .nuxt/ generated — pnpm install first)
+pnpm typecheck     # nuxt typecheck (requires .nuxt/ generated, pnpm install first)
 pnpm build         # NODE_OPTIONS='--max-old-space-size=4096' nuxt build
 ```
 
@@ -29,7 +29,7 @@ Build OOMs without the increased memory limit. CI runs these three sequentially.
 - **ESLint** uses `@nuxt/eslint` with stylistic rules: `commaDangle: 'never'`, `braceStyle: '1tbs'`. Two TS rules are disabled globally: `no-explicit-any`, `unified-signatures`.
 - **TypeScript**: referenced via generated `.nuxt/tsconfig.*.json` files. `tsconfig.json` references these paths. The `.nuxt/` dir is gitignored and regenerated on `pnpm install` or `nuxt prepare`.
 - **Nitro prerender**: explicit routes only (`crawlLinks: false`, `failOnError: false`). Adding a new page route may require adding it to `nuxt.config.ts` `nitro.prerender.routes`.
-- **@nuxthub/core** enabled with `database: true`. Cloudflare D1 (via Hub) is wired but not used for content (content is file-based).
+- No Cloudflare/NuxtHub module is used. Nitro has no explicit `preset` set in `nuxt.config.ts`; it auto-detects the Vercel platform at build time.
 
 ## Content architecture
 
@@ -45,22 +45,21 @@ The schema in `content.config.ts` defines sections: seo, hero, about, specialty,
 
 | Path | Purpose |
 |---|---|
-| `app/pages/` | Route pages (index only — single-page site) |
-| `app/components/portfolio/` | Section components (Hero) |
+| `app/pages/` | Route pages (index only, single-page site) |
+| `app/components/portfolio/` | Section components (Hero, About, Experience, Works, Connect) |
 | `app/components/` | Shared components (AppHeader, AppFooter) |
 | `app/app.config.ts` | Global app config (colors, profile, footer links) |
 
 ## Deployment
 
-- **Primary**: Cloudflare Pages (Nitro preset `cloudflare-pages`). Build output: `dist/`.
-- **Alternative**: `pnpx nuxthub@latest ensure` then deploy via `.github/workflows/nuxthub.yml`.
-- Preview locally: `npx wrangler pages dev dist` after build.
-- Set `NUXT_PUBLIC_SITE_URL` for correct OG image URLs.
+- **Primary**: Vercel, via its Git integration. Pushes to `main` deploy to production, other branches get preview deploys.
+- No preset config is needed in `nuxt.config.ts`; Nitro detects the Vercel environment automatically.
+- Set `NUXT_PUBLIC_SITE_URL` as a Vercel environment variable for correct OG image URLs.
 
 ## What this project does not have
 
 - No test framework or test files.
-- No traditional database for content (D1 exists via Hub module but unused).
+- No database, no Cloudflare/NuxtHub module (content is file-based YAML).
 - No blog, no blog content, no blog scripts.
 - No i18n, no auth, no API routes, no Edge Functions.
 - Not a monorepo (pnpm workspace is single-project, only configures build deps).

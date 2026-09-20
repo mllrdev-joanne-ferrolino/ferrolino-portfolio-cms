@@ -28,3 +28,6 @@ logs
 
 # Agent worktrees
 .agents
+
+# Vercel
+.vercel
